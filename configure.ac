@@ -150,8 +150,6 @@ AC_DEFUN([AC_DATAROOTDIR_CHECKED])
 
 AC_OUTPUT([
 Makefile
-opl/Makefile
-opl/examples/Makefile
 pkg/Makefile
 pkg/config.make
 pkg/osx/Info.plist

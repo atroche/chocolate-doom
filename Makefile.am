@@ -1,4 +1,4 @@
-SUBDIRS=textscreen opl src
+SUBDIRS=textscreen src
 
 DIST_SUBDIRS=pkg $(SUBDIRS)
 

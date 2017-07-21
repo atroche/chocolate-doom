@@ -65,26 +65,11 @@ int snd_sfxdevice = SNDDEVICE_SB;
 extern void I_InitTimidityConfig(void);
 extern sound_module_t sound_sdl_module;
 extern music_module_t music_sdl_module;
-extern music_module_t music_opl_module;
-
-// For OPL module:
-
-extern opl_driver_ver_t opl_drv_ver;
-extern int opl_io_port;
 
 // For native music module:
 
 extern char *music_pack_path;
 extern char *timidity_cfg_path;
-
-// DOS-specific options: These are unused but should be maintained
-// so that the config file can be shared between chocolate
-// doom and doom.exe
-
-static int snd_sbport = 0;
-static int snd_sbirq = 0;
-static int snd_sbdma = 0;
-static int snd_mport = 0;
 
 // Compiled-in sound modules:
 
@@ -99,7 +84,6 @@ static sound_module_t *sound_modules[] =
 static music_module_t *music_modules[] =
 {
     &music_sdl_module,
-    &music_opl_module,
     NULL,
 };
 
@@ -162,11 +146,14 @@ static void InitMusicModule(void)
     {
         // Is the music device in the list of devices supported
         // by this module?
+        printf("snd_musicdevice\n");
+        printf("%d\n", snd_musicdevice);
 
         if (SndDeviceInList(snd_musicdevice, 
                             music_modules[i]->sound_devices,
                             music_modules[i]->num_sound_devices))
         {
+          printf("nope!\n");
             // Initialize the module
 
             if (music_modules[i]->Init())
@@ -431,22 +418,15 @@ boolean I_MusicIsPlaying(void)
 
 void I_BindSoundVariables(void)
 {
-    extern char *snd_dmxoption;
     extern int use_libsamplerate;
     extern float libsamplerate_scale;
 
     M_BindIntVariable("snd_musicdevice",         &snd_musicdevice);
     M_BindIntVariable("snd_sfxdevice",           &snd_sfxdevice);
-    M_BindIntVariable("snd_sbport",              &snd_sbport);
-    M_BindIntVariable("snd_sbirq",               &snd_sbirq);
-    M_BindIntVariable("snd_sbdma",               &snd_sbdma);
-    M_BindIntVariable("snd_mport",               &snd_mport);
     M_BindIntVariable("snd_maxslicetime_ms",     &snd_maxslicetime_ms);
     M_BindStringVariable("snd_musiccmd",         &snd_musiccmd);
-    M_BindStringVariable("snd_dmxoption",        &snd_dmxoption);
     M_BindIntVariable("snd_samplerate",          &snd_samplerate);
     M_BindIntVariable("snd_cachesize",           &snd_cachesize);
-    M_BindIntVariable("opl_io_port",             &opl_io_port);
     M_BindIntVariable("snd_pitchshift",          &snd_pitchshift);
 
     M_BindStringVariable("music_pack_path",      &music_pack_path);

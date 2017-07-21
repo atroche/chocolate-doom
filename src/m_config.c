@@ -545,30 +545,6 @@ static default_t	doom_defaults_list[] =
     CONFIG_VARIABLE_INT(snd_sfxdevice),
 
     //!
-    // SoundBlaster I/O port. Unused.
-    //
-
-    CONFIG_VARIABLE_INT(snd_sbport),
-
-    //!
-    // SoundBlaster IRQ.  Unused.
-    //
-
-    CONFIG_VARIABLE_INT(snd_sbirq),
-
-    //!
-    // SoundBlaster DMA channel.  Unused.
-    //
-
-    CONFIG_VARIABLE_INT(snd_sbdma),
-
-    //!
-    // Output port to use for OPL MIDI playback.  Unused.
-    //
-
-    CONFIG_VARIABLE_INT(snd_mport),
-
-    //!
     // Gamma correction level.  A value of zero disables gamma
     // correction, while a value in the range 1-4 gives increasing
     // levels of gamma correction.
@@ -669,13 +645,6 @@ static default_t	doom_defaults_list[] =
 
     CONFIG_VARIABLE_STRING(chatmacro9),
 
-    //!
-    // @game strife
-    //
-    // Serial port number to use for SERSETUP.EXE (unused).
-    //
-
-    CONFIG_VARIABLE_INT(comport),
 };
 
 static default_collection_t doom_defaults =
@@ -793,14 +762,6 @@ static default_t extra_defaults_list[] =
     CONFIG_VARIABLE_INT(startup_delay),
 
     //!
-    // @game heretic hexen strife
-    //
-    // If non-zero, display the graphical startup screen.
-    //
-
-    CONFIG_VARIABLE_INT(graphical_startup),
-
-    //!
     // @game doom heretic strife
     //
     // If non-zero, the ENDOOM text screen is displayed when exiting the
@@ -856,21 +817,6 @@ static default_t extra_defaults_list[] =
     //
 
     CONFIG_VARIABLE_STRING(snd_musiccmd),
-
-    //!
-    // Value to set for the DMXOPTION environment variable. If this contains
-    // "-opl3", output for an OPL3 chip is generated when in OPL MIDI
-    // playback mode.
-    //
-
-    CONFIG_VARIABLE_STRING(snd_dmxoption),
-
-    //!
-    // The I/O port to use to access the OPL chip.  Only relevant when
-    // using native OPL music playback.
-    //
-
-    CONFIG_VARIABLE_INT_HEX(opl_io_port),
 
     //!
     // Controls whether libsamplerate support is used for performing
@@ -1594,39 +1540,8 @@ static default_t extra_defaults_list[] =
     // Key to send a message to player 4 during multiplayer games.
     //
 
-    CONFIG_VARIABLE_KEY(key_multi_msgplayer4),
+    CONFIG_VARIABLE_KEY(key_multi_msgplayer4)
 
-    //!
-    // @game hexen strife
-    //
-    // Key to send a message to player 5 during multiplayer games.
-    //
-
-    CONFIG_VARIABLE_KEY(key_multi_msgplayer5),
-
-    //!
-    // @game hexen strife
-    //
-    // Key to send a message to player 6 during multiplayer games.
-    //
-
-    CONFIG_VARIABLE_KEY(key_multi_msgplayer6),
-
-    //!
-    // @game hexen strife
-    //
-    // Key to send a message to player 7 during multiplayer games.
-    //
-
-    CONFIG_VARIABLE_KEY(key_multi_msgplayer7),
-
-    //!
-    // @game hexen strife
-    //
-    // Key to send a message to player 8 during multiplayer games.
-    //
-
-    CONFIG_VARIABLE_KEY(key_multi_msgplayer8),
 };
 
 static default_collection_t extra_defaults =
