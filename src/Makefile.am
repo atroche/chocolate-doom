@@ -108,6 +108,7 @@ SOURCE_FILES = $(COMMON_SOURCE_FILES) $(GAME_SOURCE_FILES)
 SOURCE_FILES_WITH_DEH = $(SOURCE_FILES) $(DEHACKED_SOURCE_FILES)
 
 EXTRA_LIBS =   $(top_builddir)/opl/libopl.a                \
+							 $(top_builddir)/textscreen/libtextscreen.a  \
                @LDFLAGS@                                   \
                @SDL_LIBS@                                  \
                @SDLMIXER_LIBS@                             \
