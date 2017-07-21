@@ -150,9 +150,6 @@ AC_DEFUN([AC_DATAROOTDIR_CHECKED])
 
 AC_OUTPUT([
 Makefile
-pkg/Makefile
-pkg/config.make
-pkg/osx/Info.plist
 src/Makefile
 src/doom/Makefile
 textscreen/Makefile
