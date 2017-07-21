@@ -762,15 +762,6 @@ static default_t extra_defaults_list[] =
     CONFIG_VARIABLE_INT(startup_delay),
 
     //!
-    // @game doom heretic strife
-    //
-    // If non-zero, the ENDOOM text screen is displayed when exiting the
-    // game. If zero, the ENDOOM screen is not displayed.
-    //
-
-    CONFIG_VARIABLE_INT(show_endoom),
-
-    //!
     // If non-zero, save screenshots in PNG format. If zero, screenshots are
     // saved in PCX format, as Vanilla Doom does.
     //
