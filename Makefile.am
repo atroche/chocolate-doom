@@ -1,4 +1,4 @@
-SUBDIRS=textscreen midiproc opl pcsound src
+SUBDIRS=textscreen opl pcsound src
 
 DIST_SUBDIRS=pkg $(SUBDIRS)
 
