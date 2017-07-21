@@ -152,11 +152,13 @@ AC_OUTPUT([
 Makefile
 opl/Makefile
 opl/examples/Makefile
-pcsound/Makefile
 pkg/Makefile
 pkg/config.make
 pkg/osx/Info.plist
 src/Makefile
 src/doom/Makefile
+textscreen/Makefile
+textscreen/fonts/Makefile
+textscreen/examples/Makefile
 ])
 

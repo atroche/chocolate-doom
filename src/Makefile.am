@@ -5,8 +5,8 @@ execgamesdir = ${bindir}
 execgames_PROGRAMS = @PROGRAM_PREFIX@doom     \
                      @PROGRAM_PREFIX@server
 
-AM_CFLAGS = -I$(top_srcdir)/opl                   \
-            -I$(top_srcdir)/pcsound               \
+AM_CFLAGS = -I$(top_srcdir)/textscreen            \
+						-I$(top_srcdir)/opl                   \
             @SDLMIXER_CFLAGS@ @SDLNET_CFLAGS@
 
 # Common source files used by absolutely everything:
@@ -55,7 +55,6 @@ i_input.c            i_input.h             \
 i_joystick.c         i_joystick.h          \
                      i_swap.h              \
 i_oplmusic.c                               \
-i_pcsound.c                                \
 i_sdlmusic.c                               \
 i_sdlsound.c                               \
 i_sound.c            i_sound.h             \
@@ -108,8 +107,7 @@ deh_text.c
 SOURCE_FILES = $(COMMON_SOURCE_FILES) $(GAME_SOURCE_FILES)
 SOURCE_FILES_WITH_DEH = $(SOURCE_FILES) $(DEHACKED_SOURCE_FILES)
 
-EXTRA_LIBS =   $(top_builddir)/pcsound/libpcsound.a        \
-               $(top_builddir)/opl/libopl.a                \
+EXTRA_LIBS =   $(top_builddir)/opl/libopl.a                \
                @LDFLAGS@                                   \
                @SDL_LIBS@                                  \
                @SDLMIXER_LIBS@                             \
