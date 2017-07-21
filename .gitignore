@@ -17,3 +17,4 @@ textscreen/Makefile.in
 textscreen/examples/Makefile.in
 textscreen/fonts/Makefile.in
 build/
+config.h
