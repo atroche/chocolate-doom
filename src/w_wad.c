@@ -30,7 +30,6 @@
 #include "i_system.h"
 #include "i_video.h"
 #include "m_misc.h"
-#include "v_diskicon.h"
 #include "z_zone.h"
 
 #include "w_wad.h"
@@ -360,8 +359,6 @@ void W_ReadLump(lumpindex_t lump, void *dest)
     }
 
     l = lumpinfo[lump];
-
-    V_BeginRead(l->size);
 
     c = W_Read(l->wad_file, l->position, dest, l->size);
 

@@ -39,7 +39,6 @@
 #include "w_main.h"
 #include "w_wad.h"
 #include "s_sound.h"
-#include "v_diskicon.h"
 #include "v_video.h"
 
 #include "f_finale.h"
@@ -125,7 +124,6 @@ char		wadfile[1024];		// primary wad file
 char		mapdir[1024];           // directory of development maps
 
 int             show_endoom = 1;
-int             show_diskicon = 1;
 
 
 void D_ConnectNetGame(void);
@@ -329,26 +327,6 @@ void D_Display (void)
     } while (!done);
 }
 
-static void EnableLoadingDisk(void)
-{
-    char *disk_lump_name;
-
-    if (show_diskicon)
-    {
-        if (M_CheckParm("-cdrom") > 0)
-        {
-            disk_lump_name = DEH_String("STCDROM");
-        }
-        else
-        {
-            disk_lump_name = DEH_String("STDISK");
-        }
-
-        V_EnableLoadingDisk(disk_lump_name,
-                            SCREENWIDTH - LOADING_DISK_W,
-                            SCREENHEIGHT - LOADING_DISK_H);
-    }
-}
 
 //
 // Add configuration file variable bindings.
@@ -388,7 +366,6 @@ void D_BindVariables(void)
     M_BindIntVariable("vanilla_savegame_limit", &vanilla_savegame_limit);
     M_BindIntVariable("vanilla_demo_limit",     &vanilla_demo_limit);
     M_BindIntVariable("show_endoom",            &show_endoom);
-    M_BindIntVariable("show_diskicon",          &show_diskicon);
 
     // Multiplayer chat macros
 
@@ -447,7 +424,6 @@ void D_DoomLoop (void)
     I_GraphicsCheckCommandLine();
     I_SetGrabMouseCallback(D_GrabMouseCallback);
     I_InitGraphics();
-    EnableLoadingDisk();
 
     TryRunTics();
 

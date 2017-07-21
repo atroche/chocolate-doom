@@ -400,8 +400,6 @@ void NET_WaitForLaunch(void)
         exit(-1);
     }
 
-    I_InitWindowIcon();
-
     ParseCommandLineArgs();
     OpenWaitDialog();
     had_warning = false;
