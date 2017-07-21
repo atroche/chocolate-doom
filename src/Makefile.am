@@ -14,7 +14,6 @@ execgames_SCRIPTS = $(SETUP_BINARIES)
 AM_CFLAGS = -I$(top_srcdir)/textscreen            \
             -I$(top_srcdir)/opl                   \
             -I$(top_srcdir)/pcsound               \
-						# ATROCHE: where do these badboys come from?
             @SDLMIXER_CFLAGS@ @SDLNET_CFLAGS@
 
 # Common source files used by absolutely everything:
@@ -25,7 +24,6 @@ i_system.c           i_system.h            \
 m_argv.c             m_argv.h              \
 m_misc.c             m_misc.h
 
-# ATROCHE: another thing I could remove!
 # Dedicated server (chocolate-server):
 
 DEDSERV_FILES=\
@@ -45,7 +43,6 @@ z_native.c           z_zone.h
 @PROGRAM_PREFIX@server_SOURCES=$(COMMON_SOURCE_FILES) $(DEDSERV_FILES)
 @PROGRAM_PREFIX@server_LDADD = @LDFLAGS@ @SDLNET_LIBS@
 
-# ATROCHE: gosh, are these maintained by hand? or … autoscan?
 # Source files used by the game binaries (chocolate-doom, etc.)
 
 GAME_SOURCE_FILES=\
@@ -157,45 +154,9 @@ z_native.c           z_zone.h
                         $(top_builddir)/textscreen/libtextscreen.a   \
                         @LDFLAGS@ @SDL_LIBS@ @SDLMIXER_LIBS@ @SDLNET_LIBS@
 
-EXTRA_DIST =                        \
-        icon.c                      \
-        doom-screensaver.desktop.in \
-        manifest.xml
-
-appdatadir = $(prefix)/share/appdata
-appdata_DATA =                              \
-        @PROGRAM_PREFIX@doom.appdata.xml
-
-@PROGRAM_PREFIX@doom.appdata.xml : doom.appdata.xml
-	cp doom.appdata.xml $@
-
-appdir = $(prefix)/share/applications
-app_DATA =                                 \
-           @PROGRAM_PREFIX@doom.desktop
-
-@PROGRAM_PREFIX@doom.desktop : doom.desktop
-	cp doom.desktop $@
-
-screensaverdir = $(prefix)/share/applications/screensavers
-screensaver_DATA = @PROGRAM_PREFIX@doom-screensaver.desktop
-
-@PROGRAM_PREFIX@doom-screensaver.desktop: doom-screensaver.desktop
-	cp doom-screensaver.desktop $@
 
 CLEANFILES = $(execgames_SCRIPTS) $(app_DATA) $(screensaver_DATA)
 
-# ATROCHE: WTF?!
-#.rc.o:
-	#$(WINDRES) $< -o $@
-#%.o : %.rc
-	#$(WINDRES) $< -o $@
-
-if HAVE_PYTHON
-
-icon.c : $(top_builddir)/data/doom.png
-	$(top_builddir)/data/convert-icon $(top_builddir)/data/doom.png $@
-
-endif
 
 midiread : midifile.c
 	$(CC) -DTEST $(CFLAGS) @LDFLAGS@ midifile.c -o $@

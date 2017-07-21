@@ -150,9 +150,6 @@ AC_DEFUN([AC_DATAROOTDIR_CHECKED])
 
 AC_OUTPUT([
 Makefile
-man/Makefile
-man/bash-completion/Makefile
-man/bash-completion/doom.template
 midiproc/Makefile
 opl/Makefile
 opl/examples/Makefile
@@ -160,15 +157,8 @@ pcsound/Makefile
 pkg/Makefile
 pkg/config.make
 pkg/osx/Info.plist
-rpm.spec
-data/Makefile
 src/Makefile
-src/doom.appdata.xml
-src/doom.desktop
-src/doom-screensaver.desktop
 src/doom/Makefile
-src/resource.rc
-src/setup-res.rc
 src/setup/Makefile
 src/setup/setup.desktop
 src/setup/setup-manifest.xml

@@ -21,9 +21,6 @@ libsetup_a_SOURCES =                            \
     txt_keyinput.c    txt_keyinput.h            \
     txt_mouseinput.c  txt_mouseinput.h
 
-EXTRA_DIST=                                     \
-    setup_icon.c
-
 appdir = $(prefix)/share/applications
 app_DATA = @PROGRAM_PREFIX@setup.desktop
 
@@ -31,11 +28,4 @@ CLEANFILES = $(app_DATA)
 
 @PROGRAM_PREFIX@setup.desktop : setup.desktop
 	cp setup.desktop $@
-
-if HAVE_PYTHON
-
-setup_icon.c : $(top_builddir)/data/setup.png
-	$(top_builddir)/data/convert-icon $(top_builddir)/data/setup.png $@
-
-endif
 

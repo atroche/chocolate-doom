@@ -27,7 +27,6 @@
 #include "m_misc.h"
 #include "z_zone.h"
 
-#include "setup_icon.c"
 #include "mode.h"
 
 #include "compatibility.h"
@@ -268,20 +267,6 @@ static void InitConfig(void)
 // Application icon
 //
 
-static void SetIcon(void)
-{
-    extern SDL_Window *TXT_SDLWindow;
-    SDL_Surface *surface;
-
-    surface = SDL_CreateRGBSurfaceFrom((void *) setup_icon_data, setup_icon_w,
-                                       setup_icon_h, 32, setup_icon_w * 4,
-                                       0xff << 24, 0xff << 16,
-                                       0xff << 8, 0xff << 0);
-
-    SDL_SetWindowIcon(TXT_SDLWindow, surface);
-    SDL_FreeSurface(surface);
-}
-
 static void SetWindowTitle(void)
 {
     char *title;
@@ -308,7 +293,6 @@ static void InitTextscreen(void)
         exit(-1);
     }
 
-    SetIcon();
     SetWindowTitle();
 }
 
