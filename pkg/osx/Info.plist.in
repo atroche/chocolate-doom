@@ -75,30 +75,6 @@ Licensed under the GNU GPL v2.</string>
                                 <string>deh</string>
                         </array>
                 </dict>
-                <dict>
-                        <key>CFBundleTypeName</key>
-                        <string>Heretic HHE patch</string>
-                        <key>CFBundleTypeIconFile</key>
-                        <string>wadfile.icns</string>
-                        <key>CFBundleTypeRole</key>
-                        <string>Viewer</string>
-                        <key>CFBundleTypeExtensions</key>
-                        <array>
-                                <string>hhe</string>
-                        </array>
-                </dict>
-                <dict>
-                        <key>CFBundleTypeName</key>
-                        <string>Strife Sehacked patch</string>
-                        <key>CFBundleTypeIconFile</key>
-                        <string>wadfile.icns</string>
-                        <key>CFBundleTypeRole</key>
-                        <string>Viewer</string>
-                        <key>CFBundleTypeExtensions</key>
-                        <array>
-                                <string>seh</string>
-                        </array>
-                </dict>
         </array>
 </dict>
 </plist>

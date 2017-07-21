@@ -302,11 +302,8 @@
                 <outlet property="doom1" destination="AlQ-U8-wym" id="XjI-7B-upb"/>
                 <outlet property="doom2" destination="BpX-4L-Bf7" id="9tZ-Ld-Ave"/>
                 <outlet property="freedm" destination="A8Y-Bc-ep0" id="foobar-9901"/>
-                <outlet property="heretic" destination="7O9-NO-XLA" id="VqX-Pb-Fsq"/>
-                <outlet property="hexen" destination="ngU-dW-hTF" id="AYw-fH-1fY"/>
                 <outlet property="iwadSelector" destination="211" id="266"/>
                 <outlet property="plutonia" destination="BBS-Yh-DIl" id="0I3-ji-w4t"/>
-                <outlet property="strife" destination="wCO-QO-xIA" id="wfl-pn-GoX"/>
                 <outlet property="tnt" destination="4yg-SA-mta" id="u31-8P-PXf"/>
             </connections>
         </customObject>
@@ -346,39 +343,6 @@
                         <rect key="frame" x="225" y="197" width="228" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <pathCell key="cell" selectable="YES" editable="YES" alignment="left" placeholderString="Click to select plutonia.wad" pathStyle="popUp" id="BPR-GP-htf">
-                            <font key="font" metaFont="system"/>
-                            <allowedTypes>
-                                <string>WAD</string>
-                                <string>wad</string>
-                            </allowedTypes>
-                        </pathCell>
-                    </pathControl>
-                    <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" id="7O9-NO-XLA">
-                        <rect key="frame" x="225" y="169" width="228" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <pathCell key="cell" selectable="YES" editable="YES" alignment="left" placeholderString="Click to select heretic.wad" pathStyle="popUp" id="JMx-XN-a9Y">
-                            <font key="font" metaFont="system"/>
-                            <allowedTypes>
-                                <string>WAD</string>
-                                <string>wad</string>
-                            </allowedTypes>
-                        </pathCell>
-                    </pathControl>
-                    <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" id="ngU-dW-hTF">
-                        <rect key="frame" x="225" y="141" width="228" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <pathCell key="cell" selectable="YES" editable="YES" alignment="left" placeholderString="Click to select hexen.wad" pathStyle="popUp" id="gzx-DJ-3f1">
-                            <font key="font" metaFont="system"/>
-                            <allowedTypes>
-                                <string>WAD</string>
-                                <string>wad</string>
-                            </allowedTypes>
-                        </pathCell>
-                    </pathControl>
-                    <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" id="wCO-QO-xIA">
-                        <rect key="frame" x="225" y="113" width="228" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <pathCell key="cell" selectable="YES" editable="YES" alignment="left" placeholderString="Click to select strife1.wad" pathStyle="popUp" id="OXq-d6-Zdl">
                             <font key="font" metaFont="system"/>
                             <allowedTypes>
                                 <string>WAD</string>
@@ -428,33 +392,6 @@
                         <rect key="frame" x="55" y="229" width="167" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Final Doom: TNT: Evilution:" id="LZC-z3-CHF">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="2kB-0c-PG2">
-                        <rect key="frame" x="170" y="173" width="52" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Heretic:" id="qPW-Co-8Wz">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="lI6-dr-25E">
-                        <rect key="frame" x="176" y="145" width="46" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hexen:" id="4hb-dZ-XUu">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="iDb-XT-j0E">
-                        <rect key="frame" x="181" y="117" width="41" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Strife:" id="ecs-y3-DUG">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

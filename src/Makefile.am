@@ -1,26 +1,20 @@
-
-SUBDIRS = doom heretic hexen strife setup
+SUBDIRS = doom setup
 
 execgamesdir = ${bindir}
 
 execgames_PROGRAMS = @PROGRAM_PREFIX@doom     \
-                     @PROGRAM_PREFIX@heretic  \
-                     @PROGRAM_PREFIX@hexen    \
-                     @PROGRAM_PREFIX@strife   \
                      @PROGRAM_PREFIX@server
 
 noinst_PROGRAMS = @PROGRAM_PREFIX@setup
 
-SETUP_BINARIES = @PROGRAM_PREFIX@doom-setup$(EXEEXT)    \
-                 @PROGRAM_PREFIX@heretic-setup$(EXEEXT) \
-                 @PROGRAM_PREFIX@hexen-setup$(EXEEXT)   \
-                 @PROGRAM_PREFIX@strife-setup$(EXEEXT)
+SETUP_BINARIES = @PROGRAM_PREFIX@doom-setup$(EXEEXT)
 
 execgames_SCRIPTS = $(SETUP_BINARIES)
 
 AM_CFLAGS = -I$(top_srcdir)/textscreen            \
             -I$(top_srcdir)/opl                   \
             -I$(top_srcdir)/pcsound               \
+						# ATROCHE: where do these badboys come from?
             @SDLMIXER_CFLAGS@ @SDLNET_CFLAGS@
 
 # Common source files used by absolutely everything:
@@ -31,6 +25,7 @@ i_system.c           i_system.h            \
 m_argv.c             m_argv.h              \
 m_misc.c             m_misc.h
 
+# ATROCHE: another thing I could remove!
 # Dedicated server (chocolate-server):
 
 DEDSERV_FILES=\
@@ -50,6 +45,7 @@ z_native.c           z_zone.h
 @PROGRAM_PREFIX@server_SOURCES=$(COMMON_SOURCE_FILES) $(DEDSERV_FILES)
 @PROGRAM_PREFIX@server_LDADD = @LDFLAGS@ @SDLNET_LIBS@
 
+# ATROCHE: gosh, are these maintained by hand? or … autoscan?
 # Source files used by the game binaries (chocolate-doom, etc.)
 
 GAME_SOURCE_FILES=\
@@ -133,37 +129,9 @@ EXTRA_LIBS =                                               \
                @SDLMIXER_LIBS@                             \
                @SDLNET_LIBS@
 
-if HAVE_WINDRES
-@PROGRAM_PREFIX@doom_SOURCES=$(SOURCE_FILES_WITH_DEH) resource.rc
-else
 @PROGRAM_PREFIX@doom_SOURCES=$(SOURCE_FILES_WITH_DEH)
-endif
 
 @PROGRAM_PREFIX@doom_LDADD = doom/libdoom.a $(EXTRA_LIBS)
-
-if HAVE_WINDRES
-@PROGRAM_PREFIX@heretic_SOURCES=$(SOURCE_FILES_WITH_DEH) resource.rc
-else
-@PROGRAM_PREFIX@heretic_SOURCES=$(SOURCE_FILES_WITH_DEH)
-endif
-
-@PROGRAM_PREFIX@heretic_LDADD = heretic/libheretic.a $(EXTRA_LIBS)
-
-if HAVE_WINDRES
-@PROGRAM_PREFIX@hexen_SOURCES=$(SOURCE_FILES) resource.rc
-else
-@PROGRAM_PREFIX@hexen_SOURCES=$(SOURCE_FILES)
-endif
-
-@PROGRAM_PREFIX@hexen_LDADD = hexen/libhexen.a $(EXTRA_LIBS)
-
-if HAVE_WINDRES
-@PROGRAM_PREFIX@strife_SOURCES=$(SOURCE_FILES_WITH_DEH) resource.rc
-else
-@PROGRAM_PREFIX@strife_SOURCES=$(SOURCE_FILES_WITH_DEH)
-endif
-
-@PROGRAM_PREFIX@strife_LDADD = strife/libstrife.a $(EXTRA_LIBS)
 
 $(SETUP_BINARIES): @PROGRAM_PREFIX@setup$(EXEEXT)
 	cp @PROGRAM_PREFIX@setup$(EXEEXT) $@
@@ -184,11 +152,7 @@ net_query.c          net_query.h           \
 net_structrw.c       net_structrw.h        \
 z_native.c           z_zone.h
 
-if HAVE_WINDRES
-@PROGRAM_PREFIX@setup_SOURCES=$(SETUP_FILES) $(COMMON_SOURCE_FILES) setup-res.rc
-else
 @PROGRAM_PREFIX@setup_SOURCES=$(SETUP_FILES) $(COMMON_SOURCE_FILES)
-endif
 @PROGRAM_PREFIX@setup_LDADD = setup/libsetup.a                             \
                         $(top_builddir)/textscreen/libtextscreen.a   \
                         @LDFLAGS@ @SDL_LIBS@ @SDLMIXER_LIBS@ @SDLNET_LIBS@
@@ -200,41 +164,17 @@ EXTRA_DIST =                        \
 
 appdatadir = $(prefix)/share/appdata
 appdata_DATA =                              \
-        @PROGRAM_PREFIX@doom.appdata.xml    \
-        @PROGRAM_PREFIX@heretic.appdata.xml \
-        @PROGRAM_PREFIX@hexen.appdata.xml   \
-        @PROGRAM_PREFIX@strife.appdata.xml
+        @PROGRAM_PREFIX@doom.appdata.xml
 
 @PROGRAM_PREFIX@doom.appdata.xml : doom.appdata.xml
 	cp doom.appdata.xml $@
 
-@PROGRAM_PREFIX@heretic.appdata.xml : heretic.appdata.xml
-	cp heretic.appdata.xml $@
-
-@PROGRAM_PREFIX@hexen.appdata.xml : hexen.appdata.xml
-	cp hexen.appdata.xml $@
-
-@PROGRAM_PREFIX@strife.appdata.xml : strife.appdata.xml
-	cp strife.appdata.xml $@
-
 appdir = $(prefix)/share/applications
 app_DATA =                                 \
-           @PROGRAM_PREFIX@doom.desktop    \
-           @PROGRAM_PREFIX@heretic.desktop \
-           @PROGRAM_PREFIX@hexen.desktop   \
-           @PROGRAM_PREFIX@strife.desktop
+           @PROGRAM_PREFIX@doom.desktop
 
 @PROGRAM_PREFIX@doom.desktop : doom.desktop
 	cp doom.desktop $@
-
-@PROGRAM_PREFIX@heretic.desktop : heretic.desktop
-	cp heretic.desktop $@
-
-@PROGRAM_PREFIX@hexen.desktop : hexen.desktop
-	cp hexen.desktop $@
-
-@PROGRAM_PREFIX@strife.desktop : strife.desktop
-	cp strife.desktop $@
 
 screensaverdir = $(prefix)/share/applications/screensavers
 screensaver_DATA = @PROGRAM_PREFIX@doom-screensaver.desktop
@@ -244,10 +184,11 @@ screensaver_DATA = @PROGRAM_PREFIX@doom-screensaver.desktop
 
 CLEANFILES = $(execgames_SCRIPTS) $(app_DATA) $(screensaver_DATA)
 
-.rc.o:
-	$(WINDRES) $< -o $@
-%.o : %.rc
-	$(WINDRES) $< -o $@
+# ATROCHE: WTF?!
+#.rc.o:
+	#$(WINDRES) $< -o $@
+#%.o : %.rc
+	#$(WINDRES) $< -o $@
 
 if HAVE_PYTHON
 

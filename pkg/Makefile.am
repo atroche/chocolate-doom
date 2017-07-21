@@ -20,10 +20,5 @@ osx/Execute.m           osx/Execute.h                                   \
 osx/IWADController.m    osx/IWADController.h                            \
 osx/LauncherManager.m   osx/LauncherManager.h
 
-WIN32_FILES=                                                            \
-win32/GNUmakefile                                                       \
-win32/cp-with-libs                                                      \
-win32/README
-
-EXTRA_DIST=$(OSX_FILES) $(WIN32_FILES)
+EXTRA_DIST=$(OSX_FILES)
 
