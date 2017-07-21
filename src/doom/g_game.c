@@ -29,7 +29,6 @@
 #include "deh_misc.h"
 
 #include "z_zone.h"
-#include "f_finale.h"
 #include "m_argv.h"
 #include "m_controls.h"
 #include "m_misc.h"
@@ -778,12 +777,6 @@ boolean G_Responder (event_t* ev)
 	if (AM_Responder (ev)) 
 	    return true;	// automap ate it 
     } 
-	 
-    if (gamestate == GS_FINALE) 
-    { 
-	if (F_Responder (ev)) 
-	    return true;	// finale ate the event 
-    } 
 
     if (testcontrols && ev->type == ev_mouse)
     {
@@ -887,7 +880,6 @@ void G_Ticker (void)
 	    G_DoCompleted (); 
 	    break; 
 	  case ga_victory: 
-	    F_StartFinale (); 
 	    break; 
 	  case ga_worlddone: 
 	    G_DoWorldDone (); 
@@ -1016,9 +1008,6 @@ void G_Ticker (void)
 	WI_Ticker (); 
 	break; 
 			 
-      case GS_FINALE: 
-	F_Ticker (); 
-	break; 
  
       case GS_DEMOSCREEN: 
 	D_PageTicker (); 
@@ -1511,7 +1500,6 @@ void G_WorldDone (void)
 	  case 11:
 	  case 20:
 	  case 30:
-	    F_StartFinale ();
 	    break;
 	}
     }

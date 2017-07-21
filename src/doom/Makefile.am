@@ -25,7 +25,6 @@ doomstat.c         doomstat.h   \
 dstrings.c         dstrings.h   \
                    d_textur.h   \
                    d_think.h    \
-f_finale.c         f_finale.h   \
 f_wipe.c           f_wipe.h     \
 g_game.c           g_game.h     \
 hu_lib.c           hu_lib.h     \

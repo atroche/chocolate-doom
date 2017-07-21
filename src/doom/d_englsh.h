@@ -350,27 +350,6 @@
 #define STSTR_CHOPPERS	"... doesn't suck - GM"
 #define STSTR_CLEV		"Changing Level..."
 
-//
-//	F_Finale.C
-//
-#define E1TEXT \
-"Once you beat the big badasses and\n"\
-"clean out the moon base you're supposed\n"\
-"to win, aren't you? Aren't you? Where's\n"\
-"your fat reward and ticket home? What\n"\
-"the hell is this? It's not supposed to\n"\
-"end this way!\n"\
-"\n" \
-"It stinks like rotten meat, but looks\n"\
-"like the lost Deimos base.  Looks like\n"\
-"you're stuck on The Shores of Hell.\n"\
-"The only way out is through.\n"\
-"\n"\
-"To continue the DOOM experience, play\n"\
-"The Shores of Hell and its amazing\n"\
-"sequel, Inferno!\n"
-
-
 #define E2TEXT \
 "You've done it! The hideous cyber-\n"\
 "demon lord that ruled the lost Deimos\n"\
@@ -667,27 +646,6 @@
 "the stomp of a cyberdemon's iron shoe."
 
 
-
-//
-// Character cast strings F_FINALE.C
-//
-#define CC_ZOMBIE	"ZOMBIEMAN"
-#define CC_SHOTGUN	"SHOTGUN GUY"
-#define CC_HEAVY	"HEAVY WEAPON DUDE"
-#define CC_IMP	"IMP"
-#define CC_DEMON	"DEMON"
-#define CC_LOST	"LOST SOUL"
-#define CC_CACO	"CACODEMON"
-#define CC_HELL	"HELL KNIGHT"
-#define CC_BARON	"BARON OF HELL"
-#define CC_ARACH	"ARACHNOTRON"
-#define CC_PAIN	"PAIN ELEMENTAL"
-#define CC_REVEN	"REVENANT"
-#define CC_MANCU	"MANCUBUS"
-#define CC_ARCH	"ARCH-VILE"
-#define CC_SPIDER	"THE SPIDER MASTERMIND"
-#define CC_CYBER	"THE CYBERDEMON"
-#define CC_HERO	"OUR HERO"
 
 
 #endif

@@ -158,11 +158,5 @@ pkg/config.make
 pkg/osx/Info.plist
 src/Makefile
 src/doom/Makefile
-src/setup/Makefile
-src/setup/setup.desktop
-src/setup/setup-manifest.xml
-textscreen/Makefile
-textscreen/examples/Makefile
-textscreen/fonts/Makefile
 ])
 

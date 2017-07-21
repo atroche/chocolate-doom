@@ -41,7 +41,6 @@
 #include "s_sound.h"
 #include "v_video.h"
 
-#include "f_finale.h"
 #include "f_wipe.h"
 
 #include "m_argv.h"
@@ -223,10 +222,6 @@ void D_Display (void)
 
       case GS_INTERMISSION:
 	WI_Drawer ();
-	break;
-
-      case GS_FINALE:
-	F_Drawer ();
 	break;
 
       case GS_DEMOSCREEN:
