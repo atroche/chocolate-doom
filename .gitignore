@@ -47,3 +47,16 @@ textscreen/Makefile
 textscreen/examples/.deps/
 textscreen/examples/Makefile
 textscreen/fonts/Makefile
+*.o
+opl/examples/droplay
+opl/libopl.a
+pcsound/libpcsound.a
+src/chocolate-doom
+src/chocolate-doom-setup
+src/chocolate-server
+src/chocolate-setup
+src/doom/libdoom.a
+src/setup/libsetup.a
+textscreen/examples/calculator
+textscreen/examples/guitest
+textscreen/libtextscreen.a
