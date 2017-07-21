@@ -16,3 +16,4 @@ src/setup/Makefile.in
 textscreen/Makefile.in
 textscreen/examples/Makefile.in
 textscreen/fonts/Makefile.in
+build/
