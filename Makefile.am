@@ -1,4 +1,0 @@
-SUBDIRS=src
-
-DIST_SUBDIRS=$(SUBDIRS)
-
