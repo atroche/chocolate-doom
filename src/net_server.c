@@ -19,8 +19,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "config.h"
-
 #include "doomtype.h"
 #include "d_mode.h"
 #include "i_system.h"
@@ -613,7 +611,7 @@ static void NET_SV_ParseSYN(net_packet_t *packet,
         return;
     }
 
-    if (strcmp(client_version, PACKAGE_STRING) != 0)
+    if (strcmp(client_version, "Chocolate Doom 3") != 0)
     {
         //!
         // @category net
@@ -627,8 +625,8 @@ static void NET_SV_ParseSYN(net_packet_t *packet,
         if (M_CheckParm("-ignoreversion") == 0)
         {
             NET_SV_SendReject(addr,
-                "Different " PACKAGE_NAME " versions cannot play a net game!\n"
-                "Version mismatch: server version is: " PACKAGE_STRING);
+                "Different " "Chocolate Doom" " versions cannot play a net game!\n"
+                "Version mismatch: server version is: " "Chocolate Doom 3");
             return;
         }
     }
@@ -1328,7 +1326,7 @@ void NET_SV_SendQueryResponse(net_addr_t *addr)
 
     // Version
 
-    querydata.version = PACKAGE_STRING;
+    querydata.version = "Chocolate Doom 3";
 
     // Server state
 

@@ -16,8 +16,6 @@
 //	Main program, simply calls D_DoomMain high level loop.
 //
 
-#include "config.h"
-
 #include <stdio.h>
 
 #include "SDL.h"

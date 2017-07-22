@@ -27,7 +27,6 @@
 
 #include "SDL_filesystem.h"
 
-#include "config.h"
 
 #include "doomtype.h"
 #include "doomkeys.h"
@@ -2056,7 +2055,7 @@ static char *GetDefaultConfigDir(void)
 
     char *result;
 
-    result = SDL_GetPrefPath("", PACKAGE_TARNAME);
+    result = SDL_GetPrefPath("", "chocolate-doom");
     return result;
 #endif /* #ifndef _WIN32 */
     return M_StringDuplicate("");

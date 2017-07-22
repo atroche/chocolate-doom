@@ -37,10 +37,7 @@
 #include "w_wad.h"
 #include "z_zone.h"
 
-#include "config.h"
-#ifdef HAVE_LIBPNG
 #include <png.h>
-#endif
 
 // TODO: There are separate RANGECHECK defines for different games, but this
 // is common code. Fix this.
@@ -709,7 +706,6 @@ void WritePCXfile(char *filename, byte *data,
     Z_Free (pcx);
 }
 
-#ifdef HAVE_LIBPNG
 //
 // WritePNGfile
 //
@@ -811,7 +807,6 @@ void WritePNGfile(char *filename, byte *data,
     png_destroy_write_struct(&ppng, &pinfo);
     fclose(handle);
 }
-#endif
 
 //
 // V_ScreenShot
@@ -825,14 +820,12 @@ void V_ScreenShot(char *format)
     
     // find a file name to save it to
 
-#ifdef HAVE_LIBPNG
     extern int png_screenshots;
     if (png_screenshots)
     {
         ext = "png";
     }
     else
-#endif
     {
         ext = "pcx";
     }
@@ -849,19 +842,16 @@ void V_ScreenShot(char *format)
 
     if (i == 100)
     {
-#ifdef HAVE_LIBPNG
         if (png_screenshots)
         {
             I_Error ("V_ScreenShot: Couldn't create a PNG");
         }
         else
-#endif
         {
             I_Error ("V_ScreenShot: Couldn't create a PCX");
         }
     }
 
-#ifdef HAVE_LIBPNG
     if (png_screenshots)
     {
     WritePNGfile(lbmname, I_VideoBuffer,
@@ -869,7 +859,6 @@ void V_ScreenShot(char *format)
                  W_CacheLumpName (DEH_String("PLAYPAL"), PU_CACHE));
     }
     else
-#endif
     {
     // save the pcx file
     WritePCXfile(lbmname, I_VideoBuffer,

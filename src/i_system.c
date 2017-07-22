@@ -32,8 +32,6 @@
 
 #include "SDL.h"
 
-#include "config.h"
-
 #include "deh_str.h"
 #include "doomtype.h"
 #include "m_argv.h"
@@ -187,7 +185,7 @@ void I_PrintStartupBanner(char *gamedescription)
     I_PrintDivider();
     
     printf(
-    " " PACKAGE_NAME " is free software, covered by the GNU General Public\n"
+    " " "Chocolate Doom" " is free software, covered by the GNU General Public\n"
     " License.  There is NO warranty; not even for MERCHANTABILITY or FITNESS\n"
     " FOR A PARTICULAR PURPOSE. You are welcome to change and distribute\n"
     " copies under certain conditions. See the source for more information.\n");
@@ -313,7 +311,7 @@ void I_Error (char *error, ...)
     if (exit_gui_popup && !I_ConsoleStdout())
     {
         SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
-                                 PACKAGE_STRING, msgbuf, NULL);
+                                 "Chocolate Doom 3", msgbuf, NULL);
     }
 
     // abort();

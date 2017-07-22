@@ -25,7 +25,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "config.h"
 #include "deh_main.h"
 #include "doomdef.h"
 #include "doomstat.h"
@@ -1169,8 +1168,6 @@ void D_DoomMain (void)
 
     // print banner
 
-    I_PrintBanner(PACKAGE_STRING);
-
     DEH_printf("Z_Init: Init zone memory allocation daemon. \n");
     Z_Init ();
 
@@ -1348,7 +1345,7 @@ void D_DoomMain (void)
 
     // Load configuration files before initialising other subsystems.
     DEH_printf("M_LoadDefaults: Load system defaults.\n");
-    M_SetConfigFilenames("default.cfg", PROGRAM_PREFIX "doom.cfg");
+    M_SetConfigFilenames("default.cfg", "chocolate-doom.cfg");
     D_BindVariables();
     M_LoadDefaults();
 

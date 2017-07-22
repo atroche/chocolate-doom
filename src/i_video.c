@@ -27,7 +27,6 @@
 #include <windows.h>
 #endif
 
-#include "config.h"
 #include "d_loop.h"
 #include "deh_str.h"
 #include "doomtype.h"
@@ -882,7 +881,7 @@ void I_InitWindowTitle(void)
 {
     char *buf;
 
-    buf = M_StringJoin(window_title, " - ", PACKAGE_STRING, NULL);
+    buf = M_StringJoin(window_title, " - ", "Chocolate Doom 3", NULL);
     SDL_SetWindowTitle(screen, buf);
     free(buf);
 }

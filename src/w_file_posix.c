@@ -16,10 +16,6 @@
 //	WAD I/O functions.
 //
 
-#include "config.h"
-
-#ifdef HAVE_MMAP
-
 #include <errno.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -164,7 +160,4 @@ wad_file_class_t posix_wad_file =
     W_POSIX_CloseFile,
     W_POSIX_Read,
 };
-
-
-#endif /* #ifdef HAVE_MMAP */
 
