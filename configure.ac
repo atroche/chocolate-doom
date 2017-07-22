@@ -152,8 +152,5 @@ AC_OUTPUT([
 Makefile
 src/Makefile
 src/doom/Makefile
-textscreen/Makefile
-textscreen/fonts/Makefile
-textscreen/examples/Makefile
 ])
 

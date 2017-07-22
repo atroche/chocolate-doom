@@ -1,4 +1,4 @@
-SUBDIRS=textscreen src
+SUBDIRS=src
 
 DIST_SUBDIRS=$(SUBDIRS)
 

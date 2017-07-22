@@ -32,7 +32,6 @@
 #include "net_client.h"
 #include "net_common.h"
 #include "net_defs.h"
-#include "net_gui.h"
 #include "net_io.h"
 #include "net_packet.h"
 #include "net_server.h"

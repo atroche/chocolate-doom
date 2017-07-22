@@ -5,8 +5,7 @@ execgamesdir = ${bindir}
 execgames_PROGRAMS = @PROGRAM_PREFIX@doom     \
                      @PROGRAM_PREFIX@server
 
-AM_CFLAGS = -I$(top_srcdir)/textscreen            \
-            @SDLMIXER_CFLAGS@ @SDLNET_CFLAGS@
+AM_CFLAGS = @SDLMIXER_CFLAGS@ @SDLNET_CFLAGS@
 
 # Common source files used by absolutely everything:
 
@@ -69,7 +68,6 @@ net_client.c         net_client.h          \
 net_common.c         net_common.h          \
 net_dedicated.c      net_dedicated.h       \
 net_defs.h                                 \
-net_gui.c            net_gui.h             \
 net_io.c             net_io.h              \
 net_loop.c           net_loop.h            \
 net_packet.c         net_packet.h          \
@@ -104,8 +102,7 @@ deh_text.c
 SOURCE_FILES = $(COMMON_SOURCE_FILES) $(GAME_SOURCE_FILES)
 SOURCE_FILES_WITH_DEH = $(SOURCE_FILES) $(DEHACKED_SOURCE_FILES)
 
-EXTRA_LIBS =   $(top_builddir)/textscreen/libtextscreen.a  \
-               @LDFLAGS@                                   \
+EXTRA_LIBS =   @LDFLAGS@                                   \
                @SDL_LIBS@                                  \
                @SDLMIXER_LIBS@                             \
                @SDLNET_LIBS@
