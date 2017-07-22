@@ -60,3 +60,4 @@ src/setup/libsetup.a
 textscreen/examples/calculator
 textscreen/examples/guitest
 textscreen/libtextscreen.a
+infer-out/
