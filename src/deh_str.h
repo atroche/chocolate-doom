@@ -22,9 +22,6 @@
 
 // Used to do dehacked text substitutions throughout the program
 
-void DEH_printf(char *fmt, ...);
-void DEH_fprintf(FILE *fstream, char *fmt, ...);
-void DEH_snprintf(char *buffer, size_t len, char *fmt, ...);
 void DEH_AddStringReplacement(char *from_text, char *to_text);
 
 #endif /* #ifndef DEH_STR_H */

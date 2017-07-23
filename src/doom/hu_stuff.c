@@ -349,7 +349,7 @@ void HU_Init(void)
     j = HU_FONTSTART;
     for (i=0;i<HU_FONTSIZE;i++)
     {
-	DEH_snprintf(buffer, 9, "STCFN%.3d", j++);
+	M_snprintf(buffer, 9, "STCFN%.3d", j++);
 	hu_font[i] = (patch_t *) W_CacheLumpName(buffer, PU_STATIC);
     }
 
@@ -411,10 +411,6 @@ void HU_Start(void)
         s = HU_TITLE_CHEX;
     }
 
-    // dehacked substitution to get modified level name
-
-    s = (s);
-    
     while (*s)
 	HUlib_addCharToTextLine(&w_title, *(s++));
 

@@ -1103,10 +1103,10 @@ static void ST_loadUnloadGraphics(load_callback_t callback)
     // Load the numbers, tall and short
     for (i=0;i<10;i++)
     {
-	DEH_snprintf(namebuf, 9, "STTNUM%d", i);
+	M_snprintf(namebuf, 9, "STTNUM%d", i);
         callback(namebuf, &tallnum[i]);
 
-	DEH_snprintf(namebuf, 9, "STYSNUM%d", i);
+	M_snprintf(namebuf, 9, "STYSNUM%d", i);
         callback(namebuf, &shortnum[i]);
     }
 
@@ -1118,7 +1118,7 @@ static void ST_loadUnloadGraphics(load_callback_t callback)
     // key cards
     for (i=0;i<NUMCARDS;i++)
     {
-	DEH_snprintf(namebuf, 9, "STKEYS%d", i);
+	M_snprintf(namebuf, 9, "STKEYS%d", i);
         callback(namebuf, &keys[i]);
     }
 
@@ -1128,7 +1128,7 @@ static void ST_loadUnloadGraphics(load_callback_t callback)
     // arms ownership widgets
     for (i=0; i<6; i++)
     {
-	DEH_snprintf(namebuf, 9, "STGNUM%d", i+2);
+	M_snprintf(namebuf, 9, "STGNUM%d", i+2);
 
 	// gray #
         callback(namebuf, &arms[i][0]);
@@ -1138,7 +1138,7 @@ static void ST_loadUnloadGraphics(load_callback_t callback)
     }
 
     // face backgrounds for different color players
-    DEH_snprintf(namebuf, 9, "STFB%d", consoleplayer);
+    M_snprintf(namebuf, 9, "STFB%d", consoleplayer);
     callback(namebuf, &faceback);
 
     // status bar background bits
@@ -1150,23 +1150,23 @@ static void ST_loadUnloadGraphics(load_callback_t callback)
     {
 	for (j=0; j<ST_NUMSTRAIGHTFACES; j++)
 	{
-	    DEH_snprintf(namebuf, 9, "STFST%d%d", i, j);
+	    M_snprintf(namebuf, 9, "STFST%d%d", i, j);
             callback(namebuf, &faces[facenum]);
             ++facenum;
 	}
-	DEH_snprintf(namebuf, 9, "STFTR%d0", i);	// turn right
+	M_snprintf(namebuf, 9, "STFTR%d0", i);	// turn right
         callback(namebuf, &faces[facenum]);
         ++facenum;
-	DEH_snprintf(namebuf, 9, "STFTL%d0", i);	// turn left
+	M_snprintf(namebuf, 9, "STFTL%d0", i);	// turn left
         callback(namebuf, &faces[facenum]);
         ++facenum;
-	DEH_snprintf(namebuf, 9, "STFOUCH%d", i);	// ouch!
+	M_snprintf(namebuf, 9, "STFOUCH%d", i);	// ouch!
         callback(namebuf, &faces[facenum]);
         ++facenum;
-	DEH_snprintf(namebuf, 9, "STFEVL%d", i);	// evil grin ;)
+	M_snprintf(namebuf, 9, "STFEVL%d", i);	// evil grin ;)
         callback(namebuf, &faces[facenum]);
         ++facenum;
-	DEH_snprintf(namebuf, 9, "STFKILL%d", i);	// pissed off
+	M_snprintf(namebuf, 9, "STFKILL%d", i);	// pissed off
         callback(namebuf, &faces[facenum]);
         ++facenum;
     }

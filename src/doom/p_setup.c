@@ -26,6 +26,7 @@
 #include "deh_main.h"
 #include "i_swap.h"
 #include "m_argv.h"
+#include "m_misc.h"
 #include "m_bbox.h"
 
 #include "g_game.h"
@@ -788,9 +789,9 @@ P_SetupLevel
     if ( gamemode == commercial)
     {
 	if (map<10)
-	    DEH_snprintf(lumpname, 9, "map0%i", map);
+	    M_snprintf(lumpname, 9, "map0%i", map);
 	else
-	    DEH_snprintf(lumpname, 9, "map%i", map);
+	    M_snprintf(lumpname, 9, "map%i", map);
     }
     else
     {

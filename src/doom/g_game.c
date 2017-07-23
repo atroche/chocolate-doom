@@ -632,8 +632,6 @@ void G_DoLoadLevel (void)
             skytexturename = "SKY3";
         }
 
-        skytexturename = (skytexturename);
-
         skytexture = R_TextureNumForName(skytexturename);
     }
 
@@ -1865,8 +1863,6 @@ G_InitNew
             break;
         }
     }
-
-    skytexturename = (skytexturename);
 
     skytexture = R_TextureNumForName(skytexturename);
 
