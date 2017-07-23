@@ -21,7 +21,7 @@
 
 #include "doomtype.h"
 
-#include "deh_str.h"
+
 #include "i_system.h"
 #include "i_timer.h"
 #include "m_argv.h"

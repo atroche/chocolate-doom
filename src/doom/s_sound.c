@@ -21,8 +21,6 @@
 #include "i_sound.h"
 #include "i_system.h"
 
-#include "deh_str.h"
-
 #include "doomstat.h"
 #include "doomtype.h"
 
