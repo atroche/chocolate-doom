@@ -1574,13 +1574,13 @@ static void WI_loadUnloadData(load_callback_t callback)
 	}
 
 	// you are here
-        callback(DEH_String("WIURH0"), &yah[0]);
+        callback(("WIURH0"), &yah[0]);
 
 	// you are here (alt.)
-        callback(DEH_String("WIURH1"), &yah[1]);
+        callback(("WIURH1"), &yah[1]);
 
 	// splat
-        callback(DEH_String("WISPLAT"), &splat[0]);
+        callback(("WISPLAT"), &splat[0]);
 
 	if (wbs->epsd < 3)
 	{
@@ -1607,7 +1607,7 @@ static void WI_loadUnloadData(load_callback_t callback)
     }
 
     // More hacks on minus sign.
-    callback(DEH_String("WIMINUS"), &wiminus);
+    callback(("WIMINUS"), &wiminus);
 
     for (i=0;i<10;i++)
     {
@@ -1617,58 +1617,58 @@ static void WI_loadUnloadData(load_callback_t callback)
     }
 
     // percent sign
-    callback(DEH_String("WIPCNT"), &percent);
+    callback(("WIPCNT"), &percent);
 
     // "finished"
-    callback(DEH_String("WIF"), &finished);
+    callback(("WIF"), &finished);
 
     // "entering"
-    callback(DEH_String("WIENTER"), &entering);
+    callback(("WIENTER"), &entering);
 
     // "kills"
-    callback(DEH_String("WIOSTK"), &kills);
+    callback(("WIOSTK"), &kills);
 
     // "scrt"
-    callback(DEH_String("WIOSTS"), &secret);
+    callback(("WIOSTS"), &secret);
 
      // "secret"
-    callback(DEH_String("WISCRT2"), &sp_secret);
+    callback(("WISCRT2"), &sp_secret);
 
     // french wad uses WIOBJ (?)
-    if (W_CheckNumForName(DEH_String("WIOBJ")) >= 0)
+    if (W_CheckNumForName(("WIOBJ")) >= 0)
     {
     	// "items"
     	if (netgame && !deathmatch)
-            callback(DEH_String("WIOBJ"), &items);
+            callback(("WIOBJ"), &items);
     	else
-            callback(DEH_String("WIOSTI"), &items);
+            callback(("WIOSTI"), &items);
     } else {
-        callback(DEH_String("WIOSTI"), &items);
+        callback(("WIOSTI"), &items);
     }
 
     // "frgs"
-    callback(DEH_String("WIFRGS"), &frags);
+    callback(("WIFRGS"), &frags);
 
     // ":"
-    callback(DEH_String("WICOLON"), &colon);
+    callback(("WICOLON"), &colon);
 
     // "time"
-    callback(DEH_String("WITIME"), &timepatch);
+    callback(("WITIME"), &timepatch);
 
     // "sucks"
-    callback(DEH_String("WISUCKS"), &sucks);
+    callback(("WISUCKS"), &sucks);
 
     // "par"
-    callback(DEH_String("WIPAR"), &par);
+    callback(("WIPAR"), &par);
 
     // "killers" (vertical)
-    callback(DEH_String("WIKILRS"), &killers);
+    callback(("WIKILRS"), &killers);
 
     // "victims" (horiz)
-    callback(DEH_String("WIVCTMS"), &victims);
+    callback(("WIVCTMS"), &victims);
 
     // "total"
-    callback(DEH_String("WIMSTT"), &total);
+    callback(("WIMSTT"), &total);
 
     for (i=0 ; i<MAXPLAYERS ; i++)
     {
@@ -1685,11 +1685,11 @@ static void WI_loadUnloadData(load_callback_t callback)
 
     if (gamemode == commercial)
     {
-        M_StringCopy(name, DEH_String("INTERPIC"), sizeof(name));
+        M_StringCopy(name, ("INTERPIC"), sizeof(name));
     }
     else if (gameversion >= exe_ultimate && wbs->epsd == 3)
     {
-        M_StringCopy(name, DEH_String("INTERPIC"), sizeof(name));
+        M_StringCopy(name, ("INTERPIC"), sizeof(name));
     }
     else
     {
@@ -1726,10 +1726,10 @@ void WI_loadData(void)
     // them with the status bar code
 
     // your face
-    star = W_CacheLumpName(DEH_String("STFST01"), PU_STATIC);
+    star = W_CacheLumpName(("STFST01"), PU_STATIC);
 
     // dead face
-    bstar = W_CacheLumpName(DEH_String("STFDEAD0"), PU_STATIC);
+    bstar = W_CacheLumpName(("STFDEAD0"), PU_STATIC);
 }
 
 static void WI_unloadCallback(char *name, patch_t **variable)

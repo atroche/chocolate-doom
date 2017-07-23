@@ -238,7 +238,7 @@ void D_Display (void)
     
     // clean up border stuff
     if (gamestate != oldgamestate && gamestate != GS_LEVEL)
-	I_SetPalette (W_CacheLumpName (DEH_String("PLAYPAL"),PU_CACHE));
+	I_SetPalette (W_CacheLumpName ("PLAYPAL",PU_CACHE));
 
     // see if the border needs to be initially drawn
     if (gamestate == GS_LEVEL && oldgamestate != GS_LEVEL)
@@ -280,7 +280,7 @@ void D_Display (void)
 	else
 	    y = viewwindowy+4;
 	V_DrawPatchDirect(viewwindowx + (scaledviewwidth - 68) / 2, y,
-                          W_CacheLumpName (DEH_String("M_PAUSE"), PU_CACHE));
+                          W_CacheLumpName ("M_PAUSE", PU_CACHE));
     }
 
 
@@ -518,29 +518,29 @@ void D_DoAdvanceDemo (void)
 	else
 	    pagetic = 170;
 	gamestate = GS_DEMOSCREEN;
-	pagename = DEH_String("TITLEPIC");
+	pagename = "TITLEPIC";
 	if ( gamemode == commercial )
 	  S_StartMusic(mus_dm2ttl);
 	else
 	  S_StartMusic (mus_intro);
 	break;
       case 1:
-	G_DeferedPlayDemo(DEH_String("demo1"));
+	G_DeferedPlayDemo("demo1");
 	break;
       case 2:
 	pagetic = 200;
 	gamestate = GS_DEMOSCREEN;
-	pagename = DEH_String("CREDIT");
+	pagename = "CREDIT";
 	break;
       case 3:
-	G_DeferedPlayDemo(DEH_String("demo2"));
+	G_DeferedPlayDemo("demo2");
 	break;
       case 4:
 	gamestate = GS_DEMOSCREEN;
 	if ( gamemode == commercial)
 	{
 	    pagetic = TICRATE * 11;
-	    pagename = DEH_String("TITLEPIC");
+	    pagename = "TITLEPIC";
 	    S_StartMusic(mus_dm2ttl);
 	}
 	else
@@ -548,17 +548,17 @@ void D_DoAdvanceDemo (void)
 	    pagetic = 200;
 
 	    if (gameversion >= exe_ultimate)
-	      pagename = DEH_String("CREDIT");
+	      pagename = "CREDIT";
 	    else
-	      pagename = DEH_String("HELP2");
+	      pagename = "HELP2";
 	}
 	break;
       case 5:
-	G_DeferedPlayDemo(DEH_String("demo3"));
+	G_DeferedPlayDemo("demo3");
 	break;
         // THE DEFINITIVE DOOM Special Edition demo
       case 6:
-	G_DeferedPlayDemo(DEH_String("demo4"));
+	G_DeferedPlayDemo("demo4");
 	break;
     }
 
@@ -567,7 +567,7 @@ void D_DoAdvanceDemo (void)
     if (gamevariant == bfgedition && !strcasecmp(pagename, "TITLEPIC")
         && W_CheckNumForName("titlepic") < 0)
     {
-        pagename = DEH_String("INTERPIC");
+        pagename = "INTERPIC";
     }
 }
 
@@ -642,7 +642,7 @@ static char *GetGameName(char *gamename)
     {
         // Has the banner been replaced?
 
-        deh_sub = DEH_String(banners[i]);
+        deh_sub = banners[i];
         
         if (deh_sub != banners[i])
         {
@@ -896,7 +896,7 @@ void PrintDehackedBanners(void)
     {
         char *deh_s;
 
-        deh_s = DEH_String(copyright_banners[i]);
+        deh_s = copyright_banners[i];
 
         if (deh_s != copyright_banners[i])
         {
@@ -1566,15 +1566,15 @@ void D_DoomMain (void)
 	int i;
 	
 	if ( gamemode == shareware)
-	    I_Error(DEH_String("\nYou cannot -file with the shareware "
-			       "version. Register!"));
+	    I_Error("\nYou cannot -file with the shareware "
+			       "version. Register!");
 
 	// Check for fake IWAD with right name,
 	// but w/o all the lumps of the registered version. 
 	if (gamemode == registered)
 	    for (i = 0;i < 23; i++)
 		if (W_CheckNumForName(name[i])<0)
-		    I_Error(DEH_String("\nThis is not the registered version."));
+		    I_Error("\nThis is not the registered version.");
     }
 
     if (W_CheckNumForName("SS_START") >= 0

@@ -610,7 +610,7 @@ void G_DoLoadLevel (void)
     //  we look for an actual index, instead of simply
     //  setting one.
 
-    skyflatnum = R_FlatNumForName(DEH_String(SKYFLATNAME));
+    skyflatnum = R_FlatNumForName((SKYFLATNAME));
 
     // The "Sky never changes in Doom II" bug was fixed in
     // the id Anthology version of doom2.exe for Final Doom.
@@ -632,7 +632,7 @@ void G_DoLoadLevel (void)
             skytexturename = "SKY3";
         }
 
-        skytexturename = DEH_String(skytexturename);
+        skytexturename = (skytexturename);
 
         skytexture = R_TextureNumForName(skytexturename);
     }
@@ -886,7 +886,7 @@ void G_Ticker (void)
 	    break; 
 	  case ga_screenshot: 
 	    V_ScreenShot("DOOM%02i.%s"); 
-            players[consoleplayer].message = DEH_String("screen shot");
+            players[consoleplayer].message = ("screen shot");
 	    gameaction = ga_nothing; 
 	    break; 
 	  case ga_nothing: 
@@ -1664,7 +1664,7 @@ void G_DoSaveGame (void)
     gameaction = ga_nothing;
     M_StringCopy(savedescription, "", sizeof(savedescription));
 
-    players[consoleplayer].message = DEH_String(GGSAVED);
+    players[consoleplayer].message = (GGSAVED);
 
     // draw the pattern into the back screen
     R_FillBackScreen ();
@@ -1866,7 +1866,7 @@ G_InitNew
         }
     }
 
-    skytexturename = DEH_String(skytexturename);
+    skytexturename = (skytexturename);
 
     skytexture = R_TextureNumForName(skytexturename);
 

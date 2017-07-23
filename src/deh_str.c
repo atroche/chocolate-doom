@@ -77,25 +77,6 @@ static deh_substitution_t *SubstitutionForString(char *s)
     return NULL;
 }
 
-// Look up a string to see if it has been replaced with something else
-// This will be used throughout the program to substitute text
-
-char *DEH_String(char *s)
-{
-    deh_substitution_t *subst;
-
-    subst = SubstitutionForString(s);
-
-    if (subst != NULL)
-    {
-        return subst->to_text;
-    }
-    else
-    {
-        return s;
-    }
-}
-
 static void InitHashTable(void)
 {
     // init hash table
@@ -370,7 +351,7 @@ static char *FormatStringReplacement(char *s)
 {
     char *repl;
 
-    repl = DEH_String(s);
+    repl = (s);
 
     if (!ValidFormatReplacement(s, repl))
     {

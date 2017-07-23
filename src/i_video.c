@@ -1372,7 +1372,7 @@ void I_InitGraphics(void)
 
     // Set the palette
 
-    doompal = W_CacheLumpName(DEH_String("PLAYPAL"), PU_CACHE);
+    doompal = W_CacheLumpName(("PLAYPAL"), PU_CACHE);
     I_SetPalette(doompal);
     SDL_SetPaletteColors(screenbuffer->format->palette, palette, 0, 256);
 

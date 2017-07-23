@@ -50,7 +50,7 @@ static void PlayerQuitGame(player_t *player)
     // Do this the same way as Vanilla Doom does, to allow dehacked
     // replacements of this message
 
-    M_StringCopy(exitmsg, DEH_String("Player 1 left the game"),
+    M_StringCopy(exitmsg, "Player 1 left the game",
                  sizeof(exitmsg));
 
     exitmsg[7] += player_num;
