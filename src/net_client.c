@@ -148,10 +148,9 @@ static net_server_recv_t recvwindow[BACKUPTICS];
 static boolean need_to_acknowledge;
 static unsigned int gamedata_recv_time;
 
-// Hash checksums of our wad directory and dehacked data.
+// Hash checksums of our wad directory
 
 sha1_digest_t net_local_wad_sha1sum;
-sha1_digest_t net_local_deh_sha1sum;
 
 // Are we playing with the freedoom IWAD?
 
@@ -935,7 +934,6 @@ boolean NET_CL_Connect(net_addr_t *addr, net_connect_data_t *data)
     server_addr = addr;
 
     memcpy(net_local_wad_sha1sum, data->wad_sha1sum, sizeof(sha1_digest_t));
-    memcpy(net_local_deh_sha1sum, data->deh_sha1sum, sizeof(sha1_digest_t));
     net_local_is_freedoom = data->is_freedoom;
 
     // create a new network I/O context and add just the

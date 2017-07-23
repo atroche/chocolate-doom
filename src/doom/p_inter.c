@@ -386,8 +386,6 @@ P_TouchSpecialThing
 	player->armorpoints++;		// can go over 100%
 	if (player->armorpoints > 200)
 	    player->armorpoints = 200;
-        // deh_green_armor_class only applies to the green armor shirt;
-        // for the armor helmets, armortype 1 is always used.
 	if (!player->armortype)
 	    player->armortype = 1;
 	player->message = (GOTARMBONUS);
@@ -407,8 +405,6 @@ P_TouchSpecialThing
 	    return;
 	player->health = 200;
 	player->mo->health = player->health;
-        // We always give armor type 2 for the megasphere; dehacked only 
-        // affects the MegaArmor.
 	P_GiveArmor (player, 2);
 	player->message = (GOTMSPHERE);
 	sound = sfx_getpow;

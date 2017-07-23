@@ -107,10 +107,9 @@ typedef struct
 
     boolean drone;
 
-    // SHA1 hash sums of the client's WAD directory and dehacked data
+    // SHA1 hash sums of the client's WAD directory 
 
     sha1_digest_t wad_sha1sum;
-    sha1_digest_t deh_sha1sum;
 
     // Is this client is playing with the Freedoom IWAD?
 
@@ -399,7 +398,7 @@ static void NET_SV_SendWaitingData(net_client_t *client)
     wait_data.is_controller = (client == controller);
     wait_data.consoleplayer = client->player_number;
 
-    // Send the WAD and dehacked checksums of the controlling client.
+    // Send the WAD checksums of the controlling client.
     // If no controller found (?), send the details that the client
     // is expecting anyway.
 
@@ -409,8 +408,6 @@ static void NET_SV_SendWaitingData(net_client_t *client)
     }
 
     memcpy(&wait_data.wad_sha1sum, &controller->wad_sha1sum,
-           sizeof(sha1_digest_t));
-    memcpy(&wait_data.deh_sha1sum, &controller->deh_sha1sum,
            sizeof(sha1_digest_t));
     wait_data.is_freedoom = controller->is_freedoom;
 
@@ -734,7 +731,6 @@ static void NET_SV_ParseSYN(net_packet_t *packet,
         // Save the SHA1 checksums
 
         memcpy(client->wad_sha1sum, data.wad_sha1sum, sizeof(sha1_digest_t));
-        memcpy(client->deh_sha1sum, data.deh_sha1sum, sizeof(sha1_digest_t));
         client->is_freedoom = data.is_freedoom;
         client->max_players = data.max_players;
 

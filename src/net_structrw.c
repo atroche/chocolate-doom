@@ -33,7 +33,6 @@ void NET_WriteConnectData(net_packet_t *packet, net_connect_data_t *data)
     NET_WriteInt8(packet, data->max_players);
     NET_WriteInt8(packet, data->is_freedoom);
     NET_WriteSHA1Sum(packet, data->wad_sha1sum);
-    NET_WriteSHA1Sum(packet, data->deh_sha1sum);
     NET_WriteInt8(packet, data->player_class);
 }
 
@@ -46,7 +45,6 @@ boolean NET_ReadConnectData(net_packet_t *packet, net_connect_data_t *data)
         && NET_ReadInt8(packet, (unsigned int *) &data->max_players)
         && NET_ReadInt8(packet, (unsigned int *) &data->is_freedoom)
         && NET_ReadSHA1Sum(packet, data->wad_sha1sum)
-        && NET_ReadSHA1Sum(packet, data->deh_sha1sum)
         && NET_ReadInt8(packet, (unsigned int *) &data->player_class);
 }
 
@@ -458,7 +456,6 @@ void NET_WriteWaitData(net_packet_t *packet, net_waitdata_t *data)
     }
 
     NET_WriteSHA1Sum(packet, data->wad_sha1sum);
-    NET_WriteSHA1Sum(packet, data->deh_sha1sum);
     NET_WriteInt8(packet, data->is_freedoom);
 }
 
@@ -499,7 +496,6 @@ boolean NET_ReadWaitData(net_packet_t *packet, net_waitdata_t *data)
     }
 
     return NET_ReadSHA1Sum(packet, data->wad_sha1sum)
-        && NET_ReadSHA1Sum(packet, data->deh_sha1sum)
         && NET_ReadInt8(packet, (unsigned int *) &data->is_freedoom);
 }
 
