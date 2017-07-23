@@ -32,8 +32,6 @@
 #include "w_checksum.h"
 #include "w_wad.h"
 
-#include "deh_main.h"
-
 #include "d_loop.h"
 
 ticcmd_t *netcmds;
@@ -197,10 +195,9 @@ static void InitConnectData(net_connect_data_t *connect_data)
     connect_data->lowres_turn = M_CheckParm("-record") > 0
                              && M_CheckParm("-longtics") == 0;
 
-    // Read checksums of our WAD directory and dehacked information
+    // Read checksums of our WAD directory 
 
     W_Checksum(connect_data->wad_sha1sum);
-    DEH_Checksum(connect_data->deh_sha1sum);
 
     // Are we playing with the Freedoom IWAD?
 

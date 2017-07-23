@@ -25,7 +25,6 @@
 #include "sounds.h"
 
 #include "deh_main.h"
-#include "deh_misc.h"
 #include "doomstat.h"
 
 #include "m_random.h"
@@ -360,13 +359,15 @@ P_TouchSpecialThing
     {
 	// armor
       case SPR_ARM1:
-	if (!P_GiveArmor (player, deh_green_armor_class))
+        // TODO: replace 1 below with GREEN armor constant
+	if (!P_GiveArmor (player, 1))
 	    return;
 	player->message = (GOTARMOR);
 	break;
 		
       case SPR_ARM2:
-	if (!P_GiveArmor (player, deh_blue_armor_class))
+        // TODO: replace 2 below with BLUE armor constant
+	if (!P_GiveArmor (player, 2))
 	    return;
 	player->message = (GOTMEGA);
 	break;
@@ -374,16 +375,17 @@ P_TouchSpecialThing
 	// bonus items
       case SPR_BON1:
 	player->health++;		// can go over 100%
-	if (player->health > deh_max_health)
-	    player->health = deh_max_health;
+  // TODO: replace 200 below with a constant
+	if (player->health > 200)
+	    player->health = 200;
 	player->mo->health = player->health;
 	player->message = (GOTHTHBONUS);
 	break;
 	
       case SPR_BON2:
 	player->armorpoints++;		// can go over 100%
-	if (player->armorpoints > deh_max_armor)
-	    player->armorpoints = deh_max_armor;
+	if (player->armorpoints > 200)
+	    player->armorpoints = 200;
         // deh_green_armor_class only applies to the green armor shirt;
         // for the armor helmets, armortype 1 is always used.
 	if (!player->armortype)
@@ -392,9 +394,9 @@ P_TouchSpecialThing
 	break;
 	
       case SPR_SOUL:
-	player->health += deh_soulsphere_health;
-	if (player->health > deh_max_soulsphere)
-	    player->health = deh_max_soulsphere;
+	player->health += 100;
+	if (player->health > 100)
+	    player->health = 100;
 	player->mo->health = player->health;
 	player->message = (GOTSUPER);
 	sound = sfx_getpow;
@@ -403,7 +405,7 @@ P_TouchSpecialThing
       case SPR_MEGA:
 	if (gamemode != commercial)
 	    return;
-	player->health = deh_megasphere_health;
+	player->health = 200;
 	player->mo->health = player->health;
         // We always give armor type 2 for the megasphere; dehacked only 
         // affects the MegaArmor.

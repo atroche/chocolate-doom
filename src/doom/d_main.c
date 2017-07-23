@@ -25,7 +25,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "deh_main.h"
 #include "doomdef.h"
 #include "doomstat.h"
 
@@ -583,99 +582,6 @@ void D_StartTitle (void)
     D_AdvanceDemo ();
 }
 
-// Strings for dehacked replacements of the startup banner
-//
-// These are from the original source: some of them are perhaps
-// not used in any dehacked patches
-
-static char *banners[] =
-{
-    // doom2.wad
-    "                         "
-    "DOOM 2: Hell on Earth v%i.%i"
-    "                           ",
-    // doom2.wad v1.666
-    "                         "
-    "DOOM 2: Hell on Earth v%i.%i66"
-    "                          ",
-    // doom1.wad
-    "                            "
-    "DOOM Shareware Startup v%i.%i"
-    "                           ",
-    // doom.wad
-    "                            "
-    "DOOM Registered Startup v%i.%i"
-    "                           ",
-    // Registered DOOM uses this
-    "                          "
-    "DOOM System Startup v%i.%i"
-    "                          ",
-    // Doom v1.666
-    "                          "
-    "DOOM System Startup v%i.%i66"
-    "                          "
-    // doom.wad (Ultimate DOOM)
-    "                         "
-    "The Ultimate DOOM Startup v%i.%i"
-    "                        ",
-    // tnt.wad
-    "                     "
-    "DOOM 2: TNT - Evilution v%i.%i"
-    "                           ",
-    // plutonia.wad
-    "                   "
-    "DOOM 2: Plutonia Experiment v%i.%i"
-    "                           ",
-};
-
-//
-// Get game name: if the startup banner has been replaced, use that.
-// Otherwise, use the name given
-// 
-
-static char *GetGameName(char *gamename)
-{
-    size_t i;
-    char *deh_sub;
-    
-    for (i=0; i<arrlen(banners); ++i)
-    {
-        // Has the banner been replaced?
-
-        deh_sub = banners[i];
-        
-        if (deh_sub != banners[i])
-        {
-            size_t gamename_size;
-            int version;
-
-            // Has been replaced.
-            // We need to expand via printf to include the Doom version number
-            // We also need to cut off spaces to get the basic name
-
-            gamename_size = strlen(deh_sub) + 10;
-            gamename = Z_Malloc(gamename_size, PU_STATIC, 0);
-            version = G_VanillaVersionCode();
-            M_snprintf(gamename, gamename_size, deh_sub,
-                       version / 100, version % 100);
-
-            while (gamename[0] != '\0' && isspace(gamename[0]))
-            {
-                memmove(gamename, gamename + 1, gamename_size - 1);
-            }
-
-            while (gamename[0] != '\0' && isspace(gamename[strlen(gamename)-1]))
-            {
-                gamename[strlen(gamename) - 1] = '\0';
-            }
-
-            return gamename;
-        }
-    }
-
-    return gamename;
-}
-
 static void SetMissionForPackName(char *pack_name)
 {
     int i;
@@ -798,56 +704,7 @@ void D_IdentifyVersion(void)
 
 void D_SetGameDescription(void)
 {
-    gamedescription = "Unknown";
-
-    if (logical_gamemission == doom)
-    {
-        // Doom 1.  But which version?
-
-        if (gamevariant == freedoom)
-        {
-            gamedescription = GetGameName("Freedoom: Phase 1");
-        }
-        else if (gamemode == retail)
-        {
-            // Ultimate Doom
-
-            gamedescription = GetGameName("The Ultimate DOOM");
-        }
-        else if (gamemode == registered)
-        {
-            gamedescription = GetGameName("DOOM Registered");
-        }
-        else if (gamemode == shareware)
-        {
-            gamedescription = GetGameName("DOOM Shareware");
-        }
-    }
-    else
-    {
-        // Doom 2 of some kind.  But which mission?
-
-        if (gamevariant == freedm)
-        {
-            gamedescription = GetGameName("FreeDM");
-        }
-        else if (gamevariant == freedoom)
-        {
-            gamedescription = GetGameName("Freedoom: Phase 2");
-        }
-        else if (logical_gamemission == doom2)
-        {
-            gamedescription = GetGameName("DOOM 2: Hell on Earth");
-        }
-        else if (logical_gamemission == pack_plut)
-        {
-            gamedescription = GetGameName("DOOM 2: Plutonia Experiment"); 
-        }
-        else if (logical_gamemission == pack_tnt)
-        {
-            gamedescription = GetGameName("DOOM 2: TNT - Evilution");
-        }
-    }
+    gamedescription = "MinDoom";
 }
 
 //      print title for every printed line
@@ -861,56 +718,6 @@ static boolean D_AddFile(char *filename)
     handle = W_AddFile(filename);
 
     return handle != NULL;
-}
-
-// Copyright message banners
-// Some dehacked mods replace these.  These are only displayed if they are 
-// replaced by dehacked.
-
-static char *copyright_banners[] =
-{
-    "===========================================================================\n"
-    "ATTENTION:  This version of DOOM has been modified.  If you would like to\n"
-    "get a copy of the original game, call 1-800-IDGAMES or see the readme file.\n"
-    "        You will not receive technical support for modified games.\n"
-    "                      press enter to continue\n"
-    "===========================================================================\n",
-
-    "===========================================================================\n"
-    "                 Commercial product - do not distribute!\n"
-    "         Please report software piracy to the SPA: 1-800-388-PIR8\n"
-    "===========================================================================\n",
-
-    "===========================================================================\n"
-    "                                Shareware!\n"
-    "===========================================================================\n"
-};
-
-// Prints a message only if it has been modified by dehacked.
-
-void PrintDehackedBanners(void)
-{
-    size_t i;
-
-    for (i=0; i<arrlen(copyright_banners); ++i)
-    {
-        char *deh_s;
-
-        deh_s = copyright_banners[i];
-
-        if (deh_s != copyright_banners[i])
-        {
-            printf("%s", deh_s);
-
-            // Make sure the modified banner always ends in a newline character.
-            // If it doesn't, add a newline.  This fixes av.wad.
-
-            if (deh_s[strlen(deh_s) - 1] != '\n')
-            {
-                printf("\n");
-            }
-        }
-    }
 }
 
 static struct 
@@ -1077,76 +884,6 @@ void PrintGameVersion(void)
             printf("Emulating the behavior of the "
                    "'%s' executable.\n", gameversions[i].description);
             break;
-        }
-    }
-}
-
-// Load dehacked patches needed for certain IWADs.
-static void LoadIwadDeh(void)
-{
-    // The Freedoom IWADs have DEHACKED lumps that must be loaded.
-    if (gamevariant == freedoom || gamevariant == freedm)
-    {
-        // Old versions of Freedoom (before 2014-09) did not have technically
-        // valid DEHACKED lumps, so ignore errors and just continue if this
-        // is an old IWAD.
-        DEH_LoadLumpByName("DEHACKED", false, true);
-    }
-
-    // If this is the HACX IWAD, we need to load the DEHACKED lump.
-    if (gameversion == exe_hacx)
-    {
-        if (!DEH_LoadLumpByName("DEHACKED", true, false))
-        {
-            I_Error("DEHACKED lump not found.  Please check that this is the "
-                    "Hacx v1.2 IWAD.");
-        }
-    }
-
-    // Chex Quest needs a separate Dehacked patch which must be downloaded
-    // and installed next to the IWAD.
-    if (gameversion == exe_chex)
-    {
-        char *chex_deh = NULL;
-        char *sep;
-
-        // Look for chex.deh in the same directory as the IWAD file.
-        sep = strrchr(iwadfile, DIR_SEPARATOR);
-
-        if (sep != NULL)
-        {
-            size_t chex_deh_len = strlen(iwadfile) + 9;
-            chex_deh = malloc(chex_deh_len);
-            M_StringCopy(chex_deh, iwadfile, chex_deh_len);
-            chex_deh[sep - iwadfile + 1] = '\0';
-            M_StringConcat(chex_deh, "chex.deh", chex_deh_len);
-        }
-        else
-        {
-            chex_deh = M_StringDuplicate("chex.deh");
-        }
-
-        // If the dehacked patch isn't found, try searching the WAD
-        // search path instead.  We might find it...
-        if (!M_FileExists(chex_deh))
-        {
-            free(chex_deh);
-            chex_deh = D_FindWADByName("chex.deh");
-        }
-
-        // Still not found?
-        if (chex_deh == NULL)
-        {
-            I_Error("Unable to find Chex Quest dehacked file (chex.deh).\n"
-                    "The dehacked file is required in order to emulate\n"
-                    "chex.exe correctly.  It can be found in your nearest\n"
-                    "/idgames repository mirror at:\n\n"
-                    "   utils/exe_edit/patches/chexdeh.zip");
-        }
-
-        if (!DEH_LoadFile(chex_deh))
-        {
-            I_Error("Failed to load chex.deh needed for emulating chex.exe.");
         }
     }
 }
@@ -1394,63 +1131,6 @@ void D_DoomMain (void)
         gamevariant = bfgedition;
     }
 
-    //!
-    // @category mod
-    //
-    // Disable automatic loading of Dehacked patches for certain
-    // IWAD files.
-    //
-    if (!M_ParmExists("-nodeh"))
-    {
-        // Some IWADs have dehacked patches that need to be loaded for
-        // them to be played properly.
-        LoadIwadDeh();
-    }
-
-    // Doom 3: BFG Edition includes modified versions of the classic
-    // IWADs which can be identified by an additional DMENUPIC lump.
-    // Furthermore, the M_GDHIGH lumps have been modified in a way that
-    // makes them incompatible to Vanilla Doom and the modified version
-    // of doom2.wad is missing the TITLEPIC lump.
-    // We specifically check for DMENUPIC here, before PWADs have been
-    // loaded which could probably include a lump of that name.
-
-    if (gamevariant == bfgedition)
-    {
-        printf("BFG Edition: Using workarounds as needed.\n");
-
-        // BFG Edition changes the names of the secret levels to
-        // censor the Wolfenstein references. It also has an extra
-        // secret level (MAP33). In Vanilla Doom (meaning the DOS
-        // version), MAP33 overflows into the Plutonia level names
-        // array, so HUSTR_33 is actually PHUSTR_1.
-
-        DEH_AddStringReplacement(HUSTR_31, "level 31: idkfa");
-        DEH_AddStringReplacement(HUSTR_32, "level 32: keen");
-        DEH_AddStringReplacement(PHUSTR_1, "level 33: betray");
-
-        // The BFG edition doesn't have the "low detail" menu option (fair
-        // enough). But bizarrely, it reuses the M_GDHIGH patch as a label
-        // for the options menu (says "Fullscreen:"). Why the perpetrators
-        // couldn't just add a new graphic lump and had to reuse this one,
-        // I don't know.
-        //
-        // The end result is that M_GDHIGH is too wide and causes the game
-        // to crash. As a workaround to get a minimum level of support for
-        // the BFG edition IWADs, use the "ON"/"OFF" graphics instead.
-
-        DEH_AddStringReplacement("M_GDHIGH", "M_MSGON");
-        DEH_AddStringReplacement("M_GDLOW", "M_MSGOFF");
-    }
-
-    // Load Dehacked patches specified on the command line with -deh.
-    // Note that there's a very careful and deliberate ordering to how
-    // Dehacked patches are loaded. The order we use is:
-    //  1. IWAD dehacked patches.
-    //  2. Command line dehacked patches specified with -deh.
-    //  3. PWAD dehacked patches in DEHACKED lumps.
-    DEH_ParseCommandLine();
-
     // Load PWAD files.
     modifiedgame = W_ParseCommandLine();
 
@@ -1521,33 +1201,7 @@ void D_DoomMain (void)
     // Generate the WAD hash table.  Speed things up a bit.
     W_GenerateHashTable();
 
-    // Load DEHACKED lumps from WAD files - but only if we give the right
-    // command line parameter.
-
-    //!
-    // @category mod
-    //
-    // Load Dehacked patches from DEHACKED lumps contained in one of the
-    // loaded PWAD files.
-    //
-    if (M_ParmExists("-dehlump"))
-    {
-        int i, loaded = 0;
-
-        for (i = numiwadlumps; i < numlumps; ++i)
-        {
-            if (!strncmp(lumpinfo[i]->name, "DEHACKED", 8))
-            {
-                DEH_LoadLump(i, false, false);
-                loaded++;
-            }
-        }
-
-        printf("  loaded %i DEHACKED lumps from PWAD files.\n", loaded);
-    }
-
-    // Set the gamedescription string. This is only possible now that
-    // we've finished loading Dehacked patches.
+    // Set the gamedescription string.
     D_SetGameDescription();
 
     savegamedir = M_GetSaveGameDir(D_SaveGameIWADName(gamemission));
@@ -1587,7 +1241,6 @@ void D_DoomMain (void)
     }
 
     I_PrintStartupBanner(gamedescription);
-    PrintDehackedBanners();
 
     // Freedoom's IWADs are Boom-compatible, which means they usually
     // don't work in Vanilla (though FreeDM is okay). Show a warning

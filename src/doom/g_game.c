@@ -26,7 +26,6 @@
 #include "doomstat.h"
 
 #include "deh_main.h"
-#include "deh_misc.h"
 
 #include "z_zone.h"
 #include "m_argv.h"
@@ -1081,11 +1080,12 @@ void G_PlayerReborn (int player)
  
     p->usedown = p->attackdown = true;	// don't do anything immediately 
     p->playerstate = PST_LIVE;       
-    p->health = deh_initial_health;     // Use dehacked value
+    p->health = 100;     // Use dehacked value
+    // TODO: replace 100 above with player health constant
     p->readyweapon = p->pendingweapon = wp_pistol; 
     p->weaponowned[wp_fist] = true; 
     p->weaponowned[wp_pistol] = true; 
-    p->ammo[am_clip] = deh_initial_bullets; 
+    p->ammo[am_clip] = 50; 
 	 
     for (i=0 ; i<NUMAMMO ; i++) 
 	p->maxammo[i] = maxammo[i]; 
