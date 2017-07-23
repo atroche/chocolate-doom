@@ -23,7 +23,7 @@
 #include <stdlib.h>
 
 
-#include "deh_main.h"
+
 #include "doomdef.h"
 
 #include "i_swap.h"

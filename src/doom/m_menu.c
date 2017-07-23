@@ -27,7 +27,7 @@
 #include "dstrings.h"
 
 #include "d_main.h"
-#include "deh_main.h"
+
 
 #include "i_input.h"
 #include "i_swap.h"

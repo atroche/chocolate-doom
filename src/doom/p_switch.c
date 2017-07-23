@@ -20,7 +20,7 @@
 #include <stdio.h>
 
 #include "i_system.h"
-#include "deh_main.h"
+
 #include "doomdef.h"
 #include "p_local.h"
 

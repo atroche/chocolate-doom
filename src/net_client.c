@@ -20,7 +20,7 @@
 #include <string.h>
 
 #include "doomtype.h"
-#include "deh_main.h"
+
 #include "deh_str.h"
 #include "i_system.h"
 #include "i_timer.h"
