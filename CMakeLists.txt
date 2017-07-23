@@ -3,8 +3,6 @@ project(mindoom)
 
 set(CMAKE_C_STANDARD 11)
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werrors")
-
 INCLUDE(FindPkgConfig)
 
 PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
@@ -24,6 +22,9 @@ set(DOOM_SOURCE src/doom/am_map.c src/doom/d_items.c src/doom/d_main.c src/doom/
 add_library(doom STATIC ${COMMON_SOURCE_FILES} ${DOOM_SOURCE})
 
 add_executable(mindoom ${COMMON_SOURCE_FILES} ${GAME_FILES})
+
+target_compile_options(mindoom PUBLIC -Wall -Werror)
+target_compile_options(doom PUBLIC -Wall -Werror)
 
 target_link_libraries(doom ${SDL2_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${LIBPNG_LIBRARIES})
 target_link_libraries(mindoom doom ${SDL2_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${LIBPNG_LIBRARIES})
