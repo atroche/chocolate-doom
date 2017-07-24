@@ -19,13 +19,9 @@ set(GAME_FILES src/aes_prng.c src/d_event.c src/d_iwad.c src/d_loop.c src/d_mode
 
 set(DOOM_SOURCE src/doom/am_map.c src/doom/d_items.c src/doom/d_main.c src/doom/d_net.c src/doom/doomdef.c src/doom/doomstat.c src/doom/dstrings.c src/doom/f_wipe.c src/doom/g_game.c src/doom/hu_lib.c src/doom/hu_stuff.c src/doom/info.c src/doom/m_menu.c src/doom/m_random.c src/doom/p_ceilng.c src/doom/p_doors.c src/doom/p_enemy.c src/doom/p_floor.c src/doom/p_inter.c src/doom/p_lights.c src/doom/p_map.c src/doom/p_maputl.c src/doom/p_mobj.c src/doom/p_plats.c src/doom/p_pspr.c src/doom/p_saveg.c src/doom/p_setup.c src/doom/p_sight.c src/doom/p_spec.c src/doom/p_switch.c src/doom/p_telept.c src/doom/p_tick.c src/doom/p_user.c src/doom/r_bsp.c src/doom/r_data.c src/doom/r_draw.c src/doom/r_main.c src/doom/r_plane.c src/doom/r_segs.c src/doom/r_sky.c src/doom/r_things.c src/doom/s_sound.c src/doom/sounds.c src/doom/st_lib.c src/doom/st_stuff.c src/doom/statdump.c src/doom/wi_stuff.c)
 
-add_library(doom STATIC ${COMMON_SOURCE_FILES} ${DOOM_SOURCE})
-
-add_executable(mindoom ${COMMON_SOURCE_FILES} ${GAME_FILES})
+add_executable(mindoom ${COMMON_SOURCE_FILES} ${GAME_FILES} ${DOOM_SOURCE})
 
 target_compile_options(mindoom PUBLIC -Wall -Werror)
-target_compile_options(doom PUBLIC -Wall -Werror)
 
-target_link_libraries(doom ${SDL2_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${LIBPNG_LIBRARIES})
-target_link_libraries(mindoom doom ${SDL2_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${LIBPNG_LIBRARIES})
+target_link_libraries(mindoom ${SDL2_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${LIBPNG_LIBRARIES})
 
