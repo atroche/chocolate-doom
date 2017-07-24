@@ -2046,19 +2046,13 @@ float M_GetFloatVariable(char *name)
 
 static char *GetDefaultConfigDir(void)
 {
-#if !defined(_WIN32) || defined(_WIN32_WCE)
-
     // Configuration settings are stored in an OS-appropriate path
     // determined by SDL.  On typical Unix systems, this might be
-    // ~/.local/share/chocolate-doom.  On Windows, we behave like
-    // Vanilla Doom and save in the current directory.
-
+    // ~/.local/share/chocolate-doom. 
     char *result;
 
     result = SDL_GetPrefPath("", "chocolate-doom");
     return result;
-#endif /* #ifndef _WIN32 */
-    return M_StringDuplicate("");
 }
 
 // 
@@ -2122,21 +2116,6 @@ char *M_GetSaveGameDir(char *iwadname)
         savegamedir = M_StringJoin(savegamedir, DIR_SEPARATOR_S, NULL);
 
         printf("Save directory changed to %s.\n", savegamedir);
-    }
-#ifdef _WIN32
-    // In -cdrom mode, we write savegames to a specific directory
-    // in addition to configs.
-
-    else if (M_ParmExists("-cdrom"))
-    {
-        savegamedir = configdir;
-    }
-#endif
-    // If not "doing" a configuration directory (Windows), don't "do"
-    // a savegame directory, either.
-    else if (!strcmp(configdir, ""))
-    {
-	savegamedir = M_StringDuplicate("");
     }
     else
     {

@@ -23,12 +23,7 @@
 
 #include <stdarg.h>
 
-#ifdef _WIN32
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#else
 #include <unistd.h>
-#endif
 
 #include "SDL.h"
 
@@ -200,12 +195,7 @@ void I_PrintStartupBanner(char *gamedescription)
 
 boolean I_ConsoleStdout(void)
 {
-#ifdef _WIN32
-    // SDL "helpfully" always redirects stdout to a file.
     return false;
-#else
-    return isatty(fileno(stdout));
-#endif
 }
 
 //

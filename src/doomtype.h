@@ -21,26 +21,7 @@
 #ifndef __DOOMTYPE__
 #define __DOOMTYPE__
 
-#if defined(_MSC_VER) && !defined(__cplusplus)
-#define inline __inline
-#endif
-
-// #define macros to provide functions missing in Windows.
-// Outside Windows, we use strings.h for str[n]casecmp.
-
-
-#ifdef _WIN32
-
-#include <string.h>
-#define strcasecmp stricmp
-#define strncasecmp strnicmp
-
-#else
-
 #include <strings.h>
-
-#endif
-
 
 //
 // The packed attribute forces structures to be packed into the minimum 
@@ -51,51 +32,14 @@
 // to disk.
 //
 
-#ifdef __GNUC__
-
-#if defined(_WIN32) && !defined(__clang__)
-#define PACKEDATTR __attribute__((packed,gcc_struct))
-#else
 #define PACKEDATTR __attribute__((packed))
-#endif
 
-#else
-#define PACKEDATTR
-#endif
-
-#ifdef __WATCOMC__
-#define PACKEDPREFIX _Packed
-#else
-#define PACKEDPREFIX
-#endif
-
-#define PACKED_STRUCT(...) PACKEDPREFIX struct __VA_ARGS__ PACKEDATTR
-
-// C99 integer types; with gcc we just use this.  Other compilers
-// should add conditional statements that define the C99 types.
-
-// What is really wanted here is stdint.h; however, some old versions
-// of Solaris don't have stdint.h and only have inttypes.h (the 
-// pre-standardisation version).  inttypes.h is also in the C99 
-// standard and defined to include stdint.h, so include this. 
+#define PACKED_STRUCT(...) struct __VA_ARGS__ PACKEDATTR
 
 #include <inttypes.h>
 
-#if defined(__cplusplus) || defined(__bool_true_false_are_defined)
-
-// Use builtin bool type with C++.
-
+#include <stdbool.h>
 typedef bool boolean;
-
-#else
-
-typedef enum 
-{
-    false, 
-    true
-} boolean;
-
-#endif
 
 typedef uint8_t byte;
 typedef uint8_t pixel_t;
@@ -103,19 +47,9 @@ typedef int16_t dpixel_t;
 
 #include <limits.h>
 
-#ifdef _WIN32
-
-#define DIR_SEPARATOR '\\'
-#define DIR_SEPARATOR_S "\\"
-#define PATH_SEPARATOR ';'
-
-#else
-
 #define DIR_SEPARATOR '/'
 #define DIR_SEPARATOR_S "/"
 #define PATH_SEPARATOR ':'
-
-#endif
 
 #define arrlen(array) (sizeof(array) / sizeof(*array))
 

@@ -24,21 +24,10 @@
 #include <ctype.h>
 #include <errno.h>
 
-#ifdef _WIN32
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <io.h>
-#ifdef _MSC_VER
-#include <direct.h>
-#endif
-#else
 #include <sys/stat.h>
 #include <sys/types.h>
-#endif
 
 #include "doomtype.h"
-
-
 
 #include "i_swap.h"
 #include "i_system.h"
@@ -54,11 +43,7 @@
 
 void M_MakeDirectory(char *path)
 {
-#ifdef _WIN32
-    mkdir(path);
-#else
     mkdir(path, 0755);
-#endif
 }
 
 // Check if a file exists
@@ -237,21 +222,7 @@ char *M_TempFile(char *s)
 {
     char *tempdir;
 
-#ifdef _WIN32
-
-    // Check the TEMP environment variable to find the location.
-
-    tempdir = getenv("TEMP");
-
-    if (tempdir == NULL)
-    {
-        tempdir = ".";
-    }
-#else
-    // In Unix, just use /tmp.
-
     tempdir = "/tmp";
-#endif
 
     return M_StringJoin(tempdir, DIR_SEPARATOR_S, s, NULL);
 }
@@ -594,23 +565,4 @@ int M_snprintf(char *buf, size_t buf_len, const char *s, ...)
     va_end(args);
     return result;
 }
-
-#ifdef _WIN32
-
-char *M_OEMToUTF8(const char *oem)
-{
-    unsigned int len = strlen(oem) + 1;
-    wchar_t *tmp;
-    char *result;
-
-    tmp = malloc(len * sizeof(wchar_t));
-    MultiByteToWideChar(CP_OEMCP, 0, oem, len, tmp, len);
-    result = malloc(len * 4);
-    WideCharToMultiByte(CP_UTF8, 0, tmp, len, result, len * 4, NULL, NULL);
-    free(tmp);
-
-    return result;
-}
-
-#endif
 
