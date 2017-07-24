@@ -4,4 +4,4 @@ cd build
 cmake ..
 make
 cd ..
-echo "try running build/mindoom"
+echo "try running build/microdoom"
