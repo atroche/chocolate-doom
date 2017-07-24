@@ -19,31 +19,27 @@
 
 #include <stdio.h>
 
-#include "z_zone.h"
-
+#include "d_event.h"
+#include "d_mode.h"
+#include "d_ticcmd.h"
+#include "doomdef.h"
+#include "doomstat.h"
+#include "doomtype.h"
+#include "g_game.h"
+#include "i_swap.h"
+#include "i_timer.h"
+#include "i_video.h"
 #include "m_misc.h"
 #include "m_random.h"
-
-
-#include "i_swap.h"
-#include "i_system.h"
-
-#include "w_wad.h"
-
-#include "g_game.h"
-
-#include "r_local.h"
 #include "s_sound.h"
-
-#include "doomstat.h"
-
 // Data.
 #include "sounds.h"
-
+#include "v_patch.h"
 // Needs access to LFB.
 #include "v_video.h"
-
+#include "w_wad.h"
 #include "wi_stuff.h"
+#include "z_zone.h"
 
 //
 // Data needed to add patches to full screen intermission pics.

@@ -17,29 +17,20 @@
 
 
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
 #include <stdarg.h>
-
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
 
 #include "SDL.h"
-
+#include "SDL_messagebox.h"
 #include "doomtype.h"
-#include "m_argv.h"
-#include "m_config.h"
-#include "m_misc.h"
-#include "i_joystick.h"
-#include "i_sound.h"
-#include "i_timer.h"
-#include "i_video.h"
-
 #include "i_system.h"
+#include "m_argv.h"
+#include "m_misc.h"
 
-#include "w_wad.h"
-#include "z_zone.h"
+struct atexit_listentry_s;
 
 #define DEFAULT_RAM 16 /* MiB */
 #define MIN_RAM     4  /* MiB */

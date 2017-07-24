@@ -19,21 +19,34 @@
 
 
 
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <strings.h>
 
-
-
+#include "d_player.h"
 #include "doomdef.h"
-
+#include "doomstat.h"
+#include "doomtype.h"
 #include "i_swap.h"
 #include "i_system.h"
-#include "z_zone.h"
+#include "i_video.h"
+#include "info.h"
+#include "m_fixed.h"
+#include "p_mobj.h"
+#include "p_pspr.h"
+#include "r_bsp.h"
+#include "r_defs.h"
+#include "r_draw.h"
+#include "r_main.h"
+#include "r_segs.h"
+#include "r_state.h"
+#include "r_things.h"
+#include "tables.h"
+#include "v_patch.h"
 #include "w_wad.h"
-
-#include "r_local.h"
-
-#include "doomstat.h"
+#include "z_zone.h"
 
 
 

@@ -22,6 +22,11 @@
 
 
 
+#include "i_video.h"
+#include "m_fixed.h"
+#include "r_defs.h"
+#include "v_patch.h"
+
 #define MAXVISSPRITES  	128
 
 extern vissprite_t	vissprites[MAXVISSPRITES];

@@ -16,12 +16,14 @@
 //	WAD I/O functions.
 //
 
-#include <errno.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/mman.h>
+#include <stdio.h>
 #include <string.h>
+#include <sys/errno.h>
+#include <sys/fcntl.h>
+#include <sys/mman.h>
+#include <unistd.h>
 
+#include "doomtype.h"
 #include "m_misc.h"
 #include "w_file.h"
 #include "z_zone.h"

@@ -18,20 +18,27 @@
 //
 
 
-#include "doomdef.h"
+#include <stddef.h>
+
 #include "d_event.h"
-
-#include "m_random.h"
-#include "p_local.h"
-#include "s_sound.h"
-
+#include "d_items.h"
+#include "d_mode.h"
+#include "d_player.h"
+#include "d_think.h"
+#include "d_ticcmd.h"
+#include "doomdef.h"
 // State.
 #include "doomstat.h"
-
+#include "doomtype.h"
+#include "m_random.h"
+#include "p_local.h"
+#include "p_mobj.h"
+#include "p_pspr.h"
+#include "r_main.h"
+#include "s_sound.h"
 // Data.
 #include "sounds.h"
-
-#include "p_pspr.h"
+#include "tables.h"
 
 #define LOWERSPEED		FRACUNIT*6
 #define RAISESPEED		FRACUNIT*6

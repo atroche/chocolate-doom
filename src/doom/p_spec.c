@@ -21,31 +21,36 @@
 //
 
 
-#include <stdlib.h>
+#include <limits.h>
+#include <stdio.h>
+#include <string.h>
 
+#include "d_player.h"
+#include "d_think.h"
+#include "doomdata.h"
 #include "doomdef.h"
 #include "doomstat.h"
-
-
+#include "doomtype.h"
+#include "g_game.h"
 #include "i_system.h"
-#include "z_zone.h"
+#include "i_timer.h"
+#include "info.h"
 #include "m_argv.h"
+#include "m_fixed.h"
 #include "m_misc.h"
 #include "m_random.h"
-#include "w_wad.h"
-
-#include "r_local.h"
 #include "p_local.h"
-
-#include "g_game.h"
-
-#include "s_sound.h"
-
+#include "p_mobj.h"
+#include "p_spec.h"
+#include "r_data.h"
+#include "r_defs.h"
 // State.
 #include "r_state.h"
-
+#include "s_sound.h"
 // Data.
 #include "sounds.h"
+#include "w_wad.h"
+#include "z_zone.h"
 
 
 //

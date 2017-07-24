@@ -18,20 +18,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "i_sound.h"
-#include "i_system.h"
-
+#include "d_mode.h"
+#include "d_player.h"
 #include "doomstat.h"
 #include "doomtype.h"
-
-#include "sounds.h"
-#include "s_sound.h"
-
+#include "i_sound.h"
+#include "i_system.h"
+#include "m_fixed.h"
 #include "m_misc.h"
 #include "m_random.h"
-#include "m_argv.h"
-
-#include "p_local.h"
+#include "r_main.h"
+#include "s_sound.h"
+#include "sounds.h"
+#include "tables.h"
 #include "w_wad.h"
 #include "z_zone.h"
 

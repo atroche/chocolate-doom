@@ -19,24 +19,27 @@
 
 
 
-// Data.
-#include "doomdef.h"
-#include "dstrings.h"
-#include "sounds.h"
-
-
-#include "doomstat.h"
-
-#include "m_random.h"
-#include "i_system.h"
+#include <stddef.h>
 
 #include "am_map.h"
-
-#include "p_local.h"
-
-#include "s_sound.h"
-
+#include "d_englsh.h"
+#include "d_items.h"
+#include "d_mode.h"
+// Data.
+#include "doomdef.h"
+#include "doomstat.h"
+#include "i_system.h"
+#include "info.h"
+#include "m_fixed.h"
+#include "m_random.h"
 #include "p_inter.h"
+#include "p_local.h"
+#include "p_mobj.h"
+#include "r_defs.h"
+#include "r_main.h"
+#include "s_sound.h"
+#include "sounds.h"
+#include "tables.h"
 
 
 #define BONUSADD	6

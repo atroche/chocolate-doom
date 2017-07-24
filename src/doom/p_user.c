@@ -21,12 +21,21 @@
 
 
 
-#include "doomdef.h"
 #include "d_event.h"
-
-#include "p_local.h"
-
+#include "d_mode.h"
+#include "d_player.h"
+#include "d_ticcmd.h"
+#include "doomdef.h"
 #include "doomstat.h"
+#include "doomtype.h"
+#include "info.h"
+#include "m_fixed.h"
+#include "p_local.h"
+#include "p_mobj.h"
+#include "p_spec.h"
+#include "r_defs.h"
+#include "r_main.h"
+#include "tables.h"
 
 
 

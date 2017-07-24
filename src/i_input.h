@@ -20,8 +20,6 @@
 #ifndef __I_INPUT__
 #define __I_INPUT__
 
-#include "doomtype.h"
-
 #define MAX_MOUSE_BUTTONS 8
 
 extern float mouse_acceleration;

@@ -22,6 +22,8 @@
 
 #include <stdio.h>
 
+#include "doomtype.h"
+
 #define SAVEGAME_EOF 0x1d
 #define VERSIONSIZE 16
 

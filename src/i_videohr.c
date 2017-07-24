@@ -16,9 +16,16 @@
 //     for Hexen startup loading screen.
 //
 
-#include "SDL.h"
-#include "string.h"
+#include <string.h>
 
+#include "SDL.h"
+#include "SDL_events.h"
+#include "SDL_keyboard.h"
+#include "SDL_keycode.h"
+#include "SDL_pixels.h"
+#include "SDL_rect.h"
+#include "SDL_surface.h"
+#include "SDL_video.h"
 #include "doomtype.h"
 #include "i_timer.h"
 #include "i_video.h"

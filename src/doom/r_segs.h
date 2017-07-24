@@ -23,6 +23,8 @@
 
 
 
+#include "r_defs.h"
+
 void
 R_RenderMaskedSegRange
 ( drawseg_t*	ds,

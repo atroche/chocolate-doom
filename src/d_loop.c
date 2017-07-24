@@ -16,26 +16,25 @@
 //     Main loop code.
 //
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "d_event.h"
 #include "d_loop.h"
 #include "d_ticcmd.h"
-
 #include "i_system.h"
 #include "i_timer.h"
 #include "i_video.h"
-
 #include "m_argv.h"
 #include "m_fixed.h"
-
 #include "net_client.h"
 #include "net_io.h"
-#include "net_query.h"
-#include "net_server.h"
-#include "net_sdl.h"
 #include "net_loop.h"
+#include "net_query.h"
+#include "net_sdl.h"
+#include "net_server.h"
+#include "w_file.h"
 
 // The complete set of data for a particular tic.
 

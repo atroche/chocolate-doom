@@ -16,30 +16,25 @@
 //
 
 
-#include <ctype.h>
-
+#include "d_englsh.h"
+#include "d_mode.h"
+#include "d_player.h"
+#include "d_ticcmd.h"
 #include "doomdef.h"
 #include "doomkeys.h"
-
-#include "z_zone.h"
-
+#include "doomstat.h"
+#include "hu_lib.h"
+#include "hu_stuff.h"
 #include "i_input.h"
 #include "i_swap.h"
 #include "i_video.h"
-
-#include "hu_stuff.h"
-#include "hu_lib.h"
 #include "m_controls.h"
 #include "m_misc.h"
-#include "w_wad.h"
-
 #include "s_sound.h"
-
-#include "doomstat.h"
-
-// Data.
-#include "dstrings.h"
 #include "sounds.h"
+#include "v_patch.h"
+#include "w_wad.h"
+#include "z_zone.h"
 
 //
 // Locally used constants, shortcuts.

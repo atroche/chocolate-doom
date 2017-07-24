@@ -18,12 +18,11 @@
 
 
 
-#include "stdlib.h"
-
-#include "doomtype.h"
-#include "i_system.h"
+#include <limits.h>
+#include <sys/_types/_int64_t.h>
 
 #include "m_fixed.h"
+#include "stdlib.h"
 
 
 

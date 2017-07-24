@@ -17,59 +17,52 @@
 
 
 
-#include <string.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include <string.h>
 
+#include "am_map.h"
+#include "d_englsh.h"
+#include "d_loop.h"
+#include "d_main.h"
+#include "d_player.h"
+#include "doomdata.h"
 #include "doomdef.h" 
-#include "doomkeys.h"
 #include "doomstat.h"
-
-
-
-#include "z_zone.h"
-#include "m_argv.h"
-#include "m_controls.h"
-#include "m_misc.h"
-#include "m_menu.h"
-#include "m_random.h"
+#include "g_game.h"
+#include "hu_stuff.h"
+#include "i_input.h"
 #include "i_system.h"
 #include "i_timer.h"
-#include "i_input.h"
-#include "i_video.h"
-
-#include "p_setup.h"
-#include "p_saveg.h"
-#include "p_tick.h"
-
-#include "d_main.h"
-
-#include "wi_stuff.h"
-#include "hu_stuff.h"
-#include "st_stuff.h"
-#include "am_map.h"
-#include "statdump.h"
-
-// Needs access to LFB.
-#include "v_video.h"
-
-#include "w_wad.h"
-
+#include "info.h"
+#include "m_argv.h"
+#include "m_controls.h"
+#include "m_fixed.h"
+#include "m_menu.h"
+#include "m_misc.h"
+#include "m_random.h"
+#include "net_defs.h"
 #include "p_local.h" 
-
-#include "s_sound.h"
-
-// Data.
-#include "dstrings.h"
-#include "sounds.h"
-
+#include "p_mobj.h"
+#include "p_saveg.h"
+#include "p_setup.h"
+#include "p_tick.h"
 // SKY handling - still the wrong place.
 #include "r_data.h"
+#include "r_defs.h"
+#include "r_draw.h"
+#include "r_main.h"
 #include "r_sky.h"
-
-
-
-#include "g_game.h"
+#include "s_sound.h"
+#include "sounds.h"
+#include "st_stuff.h"
+#include "statdump.h"
+#include "tables.h"
+// Needs access to LFB.
+#include "v_video.h"
+#include "w_wad.h"
+#include "wi_stuff.h"
+#include "z_zone.h"
 
 
 #define SAVEGAMESIZE	0x2c000

@@ -20,10 +20,9 @@
 #ifndef __W_WAD__
 #define __W_WAD__
 
-#include <stdio.h>
-
-#include "doomtype.h"
 #include "w_file.h"
+
+struct lumpinfo_s;
 
 
 //

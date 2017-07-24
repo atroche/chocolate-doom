@@ -18,17 +18,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
+#include <strings.h>
 
-#include "doomkeys.h"
 #include "d_iwad.h"
+#include "doomtype.h"
 #include "i_system.h"
 #include "m_argv.h"
-#include "m_config.h"
 #include "m_misc.h"
-#include "w_wad.h"
-#include "z_zone.h"
 
 static const iwad_t iwads[] =
 {

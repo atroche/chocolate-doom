@@ -20,56 +20,54 @@
 //
 
 
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
+#include "am_map.h"
+#include "d_englsh.h"
+#include "d_event.h"
+#include "d_iwad.h"
+#include "d_loop.h"
+#include "d_main.h"
+#include "d_mode.h"
+#include "d_player.h"
 #include "doomdef.h"
 #include "doomstat.h"
-
-#include "dstrings.h"
-#include "sounds.h"
-
-#include "d_iwad.h"
-
-#include "z_zone.h"
-#include "w_main.h"
-#include "w_wad.h"
-#include "s_sound.h"
-#include "v_video.h"
-
+#include "doomtype.h"
 #include "f_wipe.h"
-
-#include "m_argv.h"
-#include "m_config.h"
-#include "m_controls.h"
-#include "m_misc.h"
-#include "m_menu.h"
-#include "p_saveg.h"
-
+#include "g_game.h"
+#include "hu_stuff.h"
 #include "i_input.h"
 #include "i_joystick.h"
+#include "i_sound.h"
 #include "i_system.h"
 #include "i_timer.h"
 #include "i_video.h"
-
-#include "g_game.h"
-
-#include "hu_stuff.h"
-#include "wi_stuff.h"
-#include "st_stuff.h"
-#include "am_map.h"
+#include "m_argv.h"
+#include "m_config.h"
+#include "m_controls.h"
+#include "m_menu.h"
+#include "m_misc.h"
 #include "net_client.h"
 #include "net_dedicated.h"
 #include "net_query.h"
-
+#include "p_saveg.h"
 #include "p_setup.h"
-#include "r_local.h"
+#include "r_draw.h"
+#include "r_main.h"
+#include "r_state.h"
+#include "s_sound.h"
+#include "sounds.h"
+#include "st_stuff.h"
 #include "statdump.h"
-
-
-#include "d_main.h"
+#include "v_video.h"
+#include "w_file.h"
+#include "w_main.h"
+#include "w_wad.h"
+#include "wi_stuff.h"
+#include "z_zone.h"
 
 //
 // D-DoomLoop()

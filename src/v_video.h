@@ -23,7 +23,7 @@
 #define __V_VIDEO__
 
 #include "doomtype.h"
-
+#include "i_video.h"
 // Needed because we are refering to patches.
 #include "v_patch.h"
 

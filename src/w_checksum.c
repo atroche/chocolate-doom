@@ -18,11 +18,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 #include "m_misc.h"
 #include "sha1.h"
 #include "w_checksum.h"
+#include "w_file.h"
 #include "w_wad.h"
 
 static wad_file_t **open_wadfiles = NULL;

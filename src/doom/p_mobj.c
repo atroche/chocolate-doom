@@ -17,21 +17,31 @@
 //
 
 #include <stdio.h>
+#include <string.h>
 
-#include "i_system.h"
-#include "z_zone.h"
-#include "m_random.h"
-
+#include "d_mode.h"
+#include "d_player.h"
+#include "d_think.h"
+#include "d_ticcmd.h"
+#include "doomdata.h"
 #include "doomdef.h"
-#include "p_local.h"
-#include "sounds.h"
-
-#include "st_stuff.h"
-#include "hu_stuff.h"
-
-#include "s_sound.h"
-
 #include "doomstat.h"
+#include "doomtype.h"
+#include "hu_stuff.h"
+#include "i_system.h"
+#include "i_timer.h"
+#include "info.h"
+#include "m_fixed.h"
+#include "m_random.h"
+#include "p_local.h"
+#include "p_mobj.h"
+#include "r_defs.h"
+#include "r_main.h"
+#include "s_sound.h"
+#include "sounds.h"
+#include "st_stuff.h"
+#include "tables.h"
+#include "z_zone.h"
 
 
 void G_PlayerReborn (int player);

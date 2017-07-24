@@ -23,16 +23,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 #include "doomtype.h"
-
 #include "i_swap.h"
 #include "i_system.h"
-#include "i_video.h"
 #include "m_misc.h"
-#include "z_zone.h"
-
 #include "w_wad.h"
+#include "z_zone.h"
 
 typedef PACKED_STRUCT (
 {

@@ -17,21 +17,32 @@
 //
 
 
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#include "dstrings.h"
-
-#include "i_system.h"
-#include "z_zone.h"
-#include "p_local.h"
-#include "p_saveg.h"
-
+#include "d_player.h"
+#include "d_think.h"
+#include "d_ticcmd.h"
+#include "doomdata.h"
+#include "doomdef.h"
 // State.
 #include "doomstat.h"
+#include "dstrings.h"
 #include "g_game.h"
+#include "i_system.h"
+#include "info.h"
+#include "m_fixed.h"
 #include "m_misc.h"
+#include "p_local.h"
+#include "p_mobj.h"
+#include "p_pspr.h"
+#include "p_saveg.h"
+#include "p_spec.h"
+#include "r_defs.h"
 #include "r_state.h"
+#include "z_zone.h"
 
 FILE *save_stream;
 int savegamelength;

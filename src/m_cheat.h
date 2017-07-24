@@ -20,6 +20,7 @@
 #ifndef __M_CHEAT__
 #define __M_CHEAT__
 
+#include <stddef.h>
 //
 // CHEAT SEQUENCE PACKAGE
 //

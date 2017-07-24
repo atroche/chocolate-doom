@@ -22,10 +22,6 @@
 #define __DSTRINGS__
 
 
-// All important printed strings.
-
-#include "d_englsh.h"
-
 // Misc. other strings.
 #define SAVEGAMENAME	"doomsav"
 

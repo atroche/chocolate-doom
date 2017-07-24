@@ -17,9 +17,9 @@
 //
 
 #include "SDL.h"
-
+#include "SDL_stdinc.h"
+#include "SDL_timer.h"
 #include "i_timer.h"
-#include "doomtype.h"
 
 //
 // I_GetTime

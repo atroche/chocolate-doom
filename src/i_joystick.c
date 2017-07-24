@@ -16,18 +16,16 @@
 //
 
 
-#include "SDL.h"
-#include "SDL_joystick.h"
-
-#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-#include "doomtype.h"
+#include "SDL.h"
+#include "SDL_events.h"
+#include "SDL_joystick.h"
 #include "d_event.h"
+#include "doomtype.h"
 #include "i_joystick.h"
 #include "i_system.h"
-
 #include "m_config.h"
 #include "m_misc.h"
 

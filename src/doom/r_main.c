@@ -22,18 +22,28 @@
 
 
 
+#include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
-
-#include "doomdef.h"
 #include "d_loop.h"
-
+#include "d_player.h"
+#include "doomdata.h"
+#include "doomtype.h"
+#include "i_video.h"
 #include "m_bbox.h"
+#include "m_fixed.h"
 #include "m_menu.h"
-
-#include "r_local.h"
+#include "p_mobj.h"
+#include "r_bsp.h"
+#include "r_data.h"
+#include "r_defs.h"
+#include "r_draw.h"
+#include "r_main.h"
+#include "r_plane.h"
 #include "r_sky.h"
+#include "r_state.h"
+#include "r_things.h"
+#include "tables.h"
 
 
 

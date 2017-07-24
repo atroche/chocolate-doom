@@ -15,22 +15,23 @@
 //     Querying servers to find their current status.
 //
 
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#include "aes_prng.h"
+#include "d_mode.h"
 #include "i_system.h"
 #include "i_timer.h"
 #include "m_misc.h"
-
-#include "net_common.h"
 #include "net_defs.h"
 #include "net_io.h"
 #include "net_packet.h"
 #include "net_query.h"
-#include "net_structrw.h"
 #include "net_sdl.h"
+#include "net_structrw.h"
+#include "sha1.h"
 
 // DNS address of the Internet master server.
 

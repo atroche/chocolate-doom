@@ -22,6 +22,8 @@
 
 #include "doomtype.h"
 
+struct sfxinfo_struct;
+
 // so that the individual game logic and sound driver code agree
 #define NORM_PITCH 127
 

@@ -17,14 +17,17 @@
 //
 
 
-#include "SDL.h"
-#include "SDL_keycode.h"
+#include <string.h>
 
+#include "SDL_events.h"
+#include "SDL_keyboard.h"
+#include "SDL_keycode.h"
+#include "SDL_mouse.h"
+#include "SDL_scancode.h"
+#include "d_event.h"
 #include "doomkeys.h"
 #include "doomtype.h"
-#include "d_event.h"
 #include "i_input.h"
-#include "m_argv.h"
 #include "m_config.h"
 
 static const int scancode_translate_table[] = SCANCODE_TO_KEYS_ARRAY;

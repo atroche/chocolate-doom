@@ -18,14 +18,16 @@
 // read the deutex source code made my brain hurt.
 //
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
+#include <strings.h>
 
 #include "doomtype.h"
 #include "i_system.h"
 #include "m_misc.h"
+#include "w_file.h"
 #include "w_merge.h"
 #include "w_wad.h"
 #include "z_zone.h"

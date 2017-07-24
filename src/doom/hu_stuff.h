@@ -19,6 +19,8 @@
 #define __HU_STUFF_H__
 
 #include "d_event.h"
+#include "doomtype.h"
+#include "i_timer.h"
 
 
 //

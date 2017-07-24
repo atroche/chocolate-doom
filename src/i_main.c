@@ -16,15 +16,8 @@
 //	Main program, simply calls D_DoomMain high level loop.
 //
 
-#include <stdio.h>
-
-#include "SDL.h"
-
-#include "doomtype.h"
-#include "i_system.h"
-#include "m_argv.h"
-
 #include "doom/d_main.h"
+#include "m_argv.h"
 
 int main(int argc, char **argv)
 {

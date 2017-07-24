@@ -21,20 +21,23 @@
 
 
 
-#include "doomdef.h"
+#include <string.h>
 
-
-#include "i_system.h"
-#include "z_zone.h"
-#include "w_wad.h"
-
-#include "r_local.h"
-
-// Needs access to LFB (guess what).
-#include "v_video.h"
-
+#include "d_mode.h"
 // State.
 #include "doomstat.h"
+#include "doomtype.h"
+#include "i_system.h"
+#include "i_video.h"
+#include "m_fixed.h"
+#include "r_defs.h"
+#include "r_main.h"
+#include "r_state.h"
+#include "v_patch.h"
+// Needs access to LFB (guess what).
+#include "v_video.h"
+#include "w_wad.h"
+#include "z_zone.h"
 
 
 // ?

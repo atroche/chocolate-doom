@@ -14,10 +14,10 @@
 // Reading and writing various structures into packets
 //
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <_types/_uint8_t.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <string.h>
 
 #include "doomtype.h"
 #include "m_misc.h"

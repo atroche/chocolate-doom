@@ -20,12 +20,6 @@
 #ifndef __P_PSPR__
 #define __P_PSPR__
 
-// Basic data types.
-// Needs fixed point, and BAM angles.
-#include "m_fixed.h"
-#include "tables.h"
-
-
 //
 // Needs to include the precompiled
 //  sprite animation tables.
@@ -34,6 +28,9 @@
 // i.e. the Thing Atrributes table
 // and the Frame Sequence table.
 #include "info.h"
+// Basic data types.
+// Needs fixed point, and BAM angles.
+#include "m_fixed.h"
 
 
 

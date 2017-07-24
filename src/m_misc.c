@@ -18,23 +18,17 @@
 //
 
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include <errno.h>
-
+#include <strings.h>
+#include <sys/errno.h>
 #include <sys/stat.h>
-#include <sys/types.h>
 
 #include "doomtype.h"
-
-#include "i_swap.h"
 #include "i_system.h"
-#include "i_video.h"
 #include "m_misc.h"
-#include "v_video.h"
-#include "w_wad.h"
 #include "z_zone.h"
 
 //

@@ -17,23 +17,21 @@
 //	Switches, buttons. Two-state animation. Exits.
 //
 
-#include <stdio.h>
-
-#include "i_system.h"
-
-#include "doomdef.h"
-#include "p_local.h"
-
-#include "g_game.h"
-
-#include "s_sound.h"
-
-// Data.
-#include "sounds.h"
-
+#include "d_mode.h"
+#include "doomdata.h"
 // State.
 #include "doomstat.h"
+#include "doomtype.h"
+#include "g_game.h"
+#include "i_system.h"
+#include "p_mobj.h"
+#include "p_spec.h"
+#include "r_data.h"
+#include "r_defs.h"
 #include "r_state.h"
+#include "s_sound.h"
+// Data.
+#include "sounds.h"
 
 
 //

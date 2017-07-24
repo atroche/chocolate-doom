@@ -23,5 +23,7 @@ add_executable(mindoom ${COMMON_SOURCE_FILES} ${GAME_FILES} ${DOOM_SOURCE})
 
 target_compile_options(mindoom PUBLIC -Wall -Werror)
 
+set_target_properties(mindoom PROPERTIES C_INCLUDE_WHAT_YOU_USE iwyu)
+
 target_link_libraries(mindoom ${SDL2_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${LIBPNG_LIBRARIES})
 

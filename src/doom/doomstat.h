@@ -25,18 +25,16 @@
 #ifndef __D_STATE__
 #define __D_STATE__
 
+// Game mode/mission
+#include "d_mode.h"
+// We need the playr data structure as well.
+#include "d_player.h"
+#include "d_ticcmd.h"
 // We need globally shared data structures,
 //  for defining the global state variables.
 #include "doomdata.h"
-#include "d_loop.h"
-
-// We need the playr data structure as well.
-#include "d_player.h"
-
-// Game mode/mission
-#include "d_mode.h"
-
-#include "net_defs.h"
+#include "doomdef.h"
+#include "doomtype.h"
 
 
 

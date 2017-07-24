@@ -16,12 +16,8 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
-
-#include "SDL_mixer.h"
 
 #include "doomtype.h"
-
 #include "gusconf.h"
 #include "i_sound.h"
 #include "i_video.h"

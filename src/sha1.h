@@ -18,7 +18,12 @@
 #ifndef __SHA1_H__
 #define __SHA1_H__
 
+#include <_types/_uint32_t.h>
+#include <stddef.h>
+
 #include "doomtype.h"
+
+struct sha1_context_s;
 
 typedef struct sha1_context_s sha1_context_t;
 typedef byte sha1_digest_t[20];

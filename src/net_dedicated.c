@@ -16,16 +16,11 @@
 // 
 
 #include <stdio.h>
-#include <stdlib.h>
 
 #include "doomtype.h"
-
 #include "i_system.h"
 #include "i_timer.h"
-
 #include "m_argv.h"
-
-#include "net_defs.h"
 #include "net_sdl.h"
 #include "net_server.h"
 

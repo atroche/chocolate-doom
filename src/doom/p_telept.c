@@ -19,19 +19,21 @@
 
 
 
-#include "doomdef.h"
+#include "d_mode.h"
+#include "d_player.h"
+#include "d_think.h"
 #include "doomstat.h"
-
-#include "s_sound.h"
-
+#include "info.h"
+#include "m_fixed.h"
 #include "p_local.h"
-
-
-// Data.
-#include "sounds.h"
-
+#include "p_mobj.h"
+#include "r_defs.h"
 // State.
 #include "r_state.h"
+#include "s_sound.h"
+// Data.
+#include "sounds.h"
+#include "tables.h"
 
 
 

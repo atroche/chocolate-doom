@@ -19,25 +19,24 @@
 //	Functions to blit a block to the screen.
 //
 
-#include <stdio.h>
-#include <string.h>
+#include <_types/_uint8_t.h>
 #include <math.h>
-
-#include "i_system.h"
+#include <png.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "doomtype.h"
-
-
 #include "i_input.h"
 #include "i_swap.h"
+#include "i_system.h"
 #include "i_video.h"
 #include "m_bbox.h"
 #include "m_misc.h"
+#include "pngconf.h"
 #include "v_video.h"
 #include "w_wad.h"
 #include "z_zone.h"
-
-#include <png.h>
 
 // Blending table used for fuzzpatch, etc.
 // Only used in Heretic/Hexen

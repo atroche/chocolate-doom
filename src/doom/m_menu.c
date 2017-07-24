@@ -18,46 +18,39 @@
 //
 
 
-#include <stdlib.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <string.h>
 
-
+#include "d_englsh.h"
+#include "d_loop.h"
+#include "d_main.h"
+#include "d_mode.h"
+#include "d_player.h"
 #include "doomdef.h"
 #include "doomkeys.h"
+#include "doomstat.h"
 #include "dstrings.h"
-
-#include "d_main.h"
-
-
+#include "g_game.h"
+#include "hu_stuff.h"
 #include "i_input.h"
 #include "i_swap.h"
 #include "i_system.h"
 #include "i_timer.h"
 #include "i_video.h"
+#include "m_argv.h"
+#include "m_controls.h"
+#include "m_menu.h"
 #include "m_misc.h"
+#include "p_saveg.h"
+#include "r_main.h"
+#include "s_sound.h"
+// Data.
+#include "sounds.h"
+#include "v_patch.h"
 #include "v_video.h"
 #include "w_wad.h"
 #include "z_zone.h"
-
-#include "r_local.h"
-
-
-#include "hu_stuff.h"
-
-#include "g_game.h"
-
-#include "m_argv.h"
-#include "m_controls.h"
-#include "p_saveg.h"
-
-#include "s_sound.h"
-
-#include "doomstat.h"
-
-// Data.
-#include "sounds.h"
-
-#include "m_menu.h"
 
 
 extern patch_t*		hu_font[HU_FONTSIZE];

@@ -20,11 +20,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 #include "doomtype.h"
 #include "i_system.h"
-#include "m_misc.h"
 #include "m_argv.h"  // haleyjd 20110212: warning fix
+#include "m_misc.h"
 
 int		myargc;
 char**		myargv;

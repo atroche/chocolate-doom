@@ -24,6 +24,13 @@
 #define __P_SPEC__
 
 
+#include "d_player.h"
+#include "d_think.h"
+#include "doomtype.h"
+#include "m_fixed.h"
+#include "p_mobj.h"
+#include "r_defs.h"
+
 //
 // End-level timer (-TIMER option)
 //

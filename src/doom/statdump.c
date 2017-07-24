@@ -20,13 +20,13 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
-#include "d_player.h"
 #include "d_mode.h"
+#include "d_player.h"
+#include "doomdef.h"
+#include "i_timer.h"
 #include "m_argv.h"
-
 #include "statdump.h"
 
 /* Par times for E1M1-E1M9. */

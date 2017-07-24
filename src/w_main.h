@@ -19,6 +19,7 @@
 #define W_MAIN_H
 
 #include "d_mode.h"
+#include "doomtype.h"
 
 boolean W_ParseCommandLine(void);
 void W_CheckCorrectIWAD(GameMission_t mission);

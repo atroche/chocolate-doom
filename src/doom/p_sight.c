@@ -18,11 +18,16 @@
 
 
 
-#include "doomdef.h"
+#include <stddef.h>
 
+#include "doomdata.h"
+#include "doomtype.h"
 #include "i_system.h"
+#include "m_fixed.h"
 #include "p_local.h"
-
+#include "p_mobj.h"
+#include "r_defs.h"
+#include "r_main.h"
 // State.
 #include "r_state.h"
 

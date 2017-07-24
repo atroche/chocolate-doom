@@ -20,6 +20,8 @@
 #ifndef __R_BSP__
 #define __R_BSP__
 
+#include "r_defs.h"
+
 
 
 extern seg_t*		curline;

@@ -23,6 +23,8 @@
 
 #include "m_bbox.h"
 
+#include <limits.h>
+
 
 
 

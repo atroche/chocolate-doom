@@ -23,6 +23,9 @@
 
 
 
+#include "d_player.h"
+#include "doomtype.h"
+
 boolean	P_GivePower(player_t*, int);
 
 

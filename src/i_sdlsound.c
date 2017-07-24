@@ -17,23 +17,24 @@
 //	System interface for sound.
 //
 
+#include <_types/_uint32_t.h>
+#include <_types/_uint64_t.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <assert.h>
+
 #include "SDL.h"
+#include "SDL_audio.h"
 #include "SDL_mixer.h"
-
-
+#include "SDL_stdinc.h"
+#include "doomtype.h"
 #include "i_sound.h"
 #include "i_system.h"
-#include "i_swap.h"
-#include "m_argv.h"
 #include "m_misc.h"
 #include "w_wad.h"
 #include "z_zone.h"
 
-#include "doomtype.h"
+struct allocated_sound_s;
 
 #define NUM_CHANNELS 16
 

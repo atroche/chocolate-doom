@@ -19,15 +19,12 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
-
-// Data.
-#include "sounds.h"
-#include "m_fixed.h"
 
 #include "info.h"
-
+#include "m_fixed.h"
 #include "p_mobj.h"
+// Data.
+#include "sounds.h"
 
 char *sprnames[] = {
     "TROO","SHTG","PUNG","PISG","PISF","SHTF","SHT2","CHGG","CHGF","MISG",

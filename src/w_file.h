@@ -21,7 +21,10 @@
 #define __W_FILE__
 
 #include <stdio.h>
+
 #include "doomtype.h"
+
+struct _wad_file_s;
 
 typedef struct _wad_file_s wad_file_t;
 

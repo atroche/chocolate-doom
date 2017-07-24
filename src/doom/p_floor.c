@@ -18,17 +18,23 @@
 
 
 
-#include "z_zone.h"
-#include "doomdef.h"
-#include "p_local.h"
+#include <limits.h>
+#include <stddef.h>
 
-#include "s_sound.h"
-
+#include "d_think.h"
+#include "doomdata.h"
 // State.
 #include "doomstat.h"
+#include "doomtype.h"
+#include "m_fixed.h"
+#include "p_local.h"
+#include "p_spec.h"
+#include "r_defs.h"
 #include "r_state.h"
+#include "s_sound.h"
 // Data.
 #include "sounds.h"
+#include "z_zone.h"
 
 
 //

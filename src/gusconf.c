@@ -21,11 +21,12 @@
 //
 
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
+#include "doomtype.h"
 #include "m_misc.h"
 #include "w_wad.h"
 #include "z_zone.h"

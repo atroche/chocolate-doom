@@ -19,19 +19,22 @@
 
 
 
-#include "doomdef.h"
+#include <stddef.h>
 
-#include "m_bbox.h"
-
-#include "i_system.h"
-
-#include "r_main.h"
-#include "r_plane.h"
-#include "r_things.h"
-
+#include "doomdata.h"
 // State.
 #include "doomstat.h"
+#include "doomtype.h"
+#include "i_system.h"
+#include "i_video.h"
+#include "m_bbox.h"
+#include "m_fixed.h"
+#include "r_defs.h"
+#include "r_main.h"
+#include "r_plane.h"
 #include "r_state.h"
+#include "r_things.h"
+#include "tables.h"
 
 //#include "r_local.h"
 

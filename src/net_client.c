@@ -14,20 +14,14 @@
 // Network client code
 //
 
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "doomtype.h"
-
-
-#include "i_system.h"
 #include "i_timer.h"
-#include "m_argv.h"
-#include "m_fixed.h"
 #include "m_config.h"
-#include "m_misc.h"
+#include "m_fixed.h"
 #include "net_client.h"
 #include "net_common.h"
 #include "net_defs.h"
@@ -35,8 +29,6 @@
 #include "net_packet.h"
 #include "net_server.h"
 #include "net_structrw.h"
-#include "w_checksum.h"
-#include "w_wad.h"
 
 extern void D_ReceiveTic(ticcmd_t *ticcmds, boolean *playeringame);
 

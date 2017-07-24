@@ -25,11 +25,12 @@
 // up to work independently.
 //
 
-#include <stdint.h>
+#include <_types/_uint32_t.h>
+#include <_types/_uint8_t.h>
 
+#include "SDL_endian.h"
 #include "aes_prng.h"
 #include "doomtype.h"
-#include "i_swap.h"
 
 /*
  * Cryptographic API.

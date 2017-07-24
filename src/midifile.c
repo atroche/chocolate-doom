@@ -15,13 +15,13 @@
 //    Reading of MIDI files.
 //
 
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <assert.h>
 
+#include "SDL_endian.h"
 #include "doomtype.h"
-#include "i_swap.h"
 #include "midifile.h"
 
 #define HEADER_CHUNK_ID "MThd"

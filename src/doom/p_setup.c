@@ -19,27 +19,32 @@
 
 
 
-#include <math.h>
+#include <stdio.h>
+#include <string.h>
 
-#include "z_zone.h"
-
-
-#include "i_swap.h"
-#include "m_argv.h"
-#include "m_misc.h"
-#include "m_bbox.h"
-
-#include "g_game.h"
-
-#include "i_system.h"
-#include "w_wad.h"
-
+#include "d_mode.h"
+#include "d_player.h"
+#include "doomdata.h"
 #include "doomdef.h"
-#include "p_local.h"
-
-#include "s_sound.h"
-
 #include "doomstat.h"
+#include "doomtype.h"
+#include "g_game.h"
+#include "i_swap.h"
+#include "i_system.h"
+#include "info.h"
+#include "m_argv.h"
+#include "m_bbox.h"
+#include "m_fixed.h"
+#include "m_misc.h"
+#include "p_local.h"
+#include "p_mobj.h"
+#include "p_spec.h"
+#include "r_data.h"
+#include "r_defs.h"
+#include "r_things.h"
+#include "s_sound.h"
+#include "w_wad.h"
+#include "z_zone.h"
 
 
 void	P_SpawnMapThing (mapthing_t*	mthing);

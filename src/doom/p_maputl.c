@@ -22,16 +22,18 @@
 
 
 
+#include <limits.h>
+#include <stdint.h>
 #include <stdlib.h>
 
-
-#include "m_bbox.h"
-
-#include "doomdef.h"
 #include "doomstat.h"
+#include "doomtype.h"
+#include "m_bbox.h"
+#include "m_fixed.h"
 #include "p_local.h"
-
-
+#include "p_mobj.h"
+#include "r_defs.h"
+#include "r_main.h"
 // State.
 #include "r_state.h"
 

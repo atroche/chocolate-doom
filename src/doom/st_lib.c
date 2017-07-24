@@ -17,23 +17,13 @@
 //
 
 
-#include <stdio.h>
-#include <ctype.h>
-
-
-#include "doomdef.h"
-
-#include "z_zone.h"
-#include "v_video.h"
-
 #include "i_swap.h"
 #include "i_system.h"
-
-#include "w_wad.h"
-
-#include "st_stuff.h"
 #include "st_lib.h"
-#include "r_local.h"
+#include "st_stuff.h"
+#include "v_video.h"
+#include "w_wad.h"
+#include "z_zone.h"
 
 
 // in AM_map.c

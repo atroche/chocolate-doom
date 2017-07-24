@@ -17,22 +17,24 @@
 
 
 
-#include "z_zone.h"
+#include <stdio.h>
+
+#include "d_englsh.h"
+#include "d_player.h"
+#include "d_think.h"
 #include "doomdef.h"
-
-#include "p_local.h"
+#include "doomtype.h"
 #include "i_system.h"
-
-#include "s_sound.h"
-
-
-// State.
-#include "doomstat.h"
+#include "i_timer.h"
+#include "m_fixed.h"
+#include "p_local.h"
+#include "p_mobj.h"
+#include "p_spec.h"
+#include "r_defs.h"
 #include "r_state.h"
-
-// Data.
-#include "dstrings.h"
+#include "s_sound.h"
 #include "sounds.h"
+#include "z_zone.h"
 
 #if 0
 //

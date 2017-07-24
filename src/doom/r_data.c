@@ -18,25 +18,26 @@
 //
 
 #include <stdio.h>
+#include <string.h>
+#include <strings.h>
 
-
+#include "d_think.h"
+#include "doomstat.h"
 #include "i_swap.h"
 #include "i_system.h"
+#include "m_fixed.h"
+#include "m_misc.h"
+#include "p_local.h"
+#include "p_mobj.h"
+#include "r_data.h"
+#include "r_defs.h"
+#include "r_sky.h"
+#include "r_state.h"
+#include "v_patch.h"
+#include "w_wad.h"
 #include "z_zone.h"
 
-
-#include "w_wad.h"
-
-#include "doomdef.h"
-#include "m_misc.h"
-#include "r_local.h"
-#include "p_local.h"
-
-#include "doomstat.h"
-#include "r_sky.h"
-
-
-#include "r_data.h"
+struct texture_s;
 
 //
 // Graphics.

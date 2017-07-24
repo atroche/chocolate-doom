@@ -23,6 +23,10 @@
 
 
 
+#include "doomtype.h"
+#include "m_fixed.h"
+#include "r_defs.h"
+
 extern lighttable_t*	dc_colormap;
 extern int		dc_x;
 extern int		dc_yl;
