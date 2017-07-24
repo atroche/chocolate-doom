@@ -35,7 +35,6 @@
 
 #include "doomtype.h"
 
-#define LOW_PASS_FILTER
 #define NUM_CHANNELS 16
 
 typedef struct allocated_sound_s allocated_sound_t;
@@ -462,7 +461,6 @@ static bool ExpandSoundData_SDL(sfxinfo_t *sfxinfo,
             expanded[i * 2] = expanded[i * 2 + 1] = sample;
         }
 
-#ifdef LOW_PASS_FILTER
         // Perform a low-pass filter on the upscaled sound to filter
         // out high-frequency noise from the conversion process.
 
@@ -490,7 +488,6 @@ static bool ExpandSoundData_SDL(sfxinfo_t *sfxinfo,
                                       + (1 - alpha) * expanded[i-2]);
             }
         }
-#endif /* #ifdef LOW_PASS_FILTER */
     }
 
     return true;

@@ -28,11 +28,6 @@
 #define TRACK_CHUNK_ID  "MTrk"
 #define MAX_BUFFER_SIZE 0x10000
 
-// haleyjd 09/09/10: packing required
-#ifdef _MSC_VER
-#pragma pack(push, 1)
-#endif
-
 typedef PACKED_STRUCT (
 {
     byte chunk_id[4];
@@ -46,11 +41,6 @@ typedef PACKED_STRUCT (
     unsigned short num_tracks;
     unsigned short time_division;
 }) midi_header_t;
-
-// haleyjd 09/09/10: packing off.
-#ifdef _MSC_VER
-#pragma pack(pop)
-#endif
 
 typedef struct
 {
