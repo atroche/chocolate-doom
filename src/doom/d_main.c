@@ -439,6 +439,11 @@ void D_DoomLoop (void)
 	// Update display, next frame, with current state.
         if (screenvisible)
             D_Display ();
+
+        if (M_CheckParm("-onetictest") > 0)
+          break;
+
+
     }
 }
 
