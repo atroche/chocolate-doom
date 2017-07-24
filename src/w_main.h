@@ -20,7 +20,7 @@
 
 #include "d_mode.h"
 
-boolean W_ParseCommandLine(void);
+bool W_ParseCommandLine(void);
 void W_CheckCorrectIWAD(GameMission_t mission);
 
 #endif /* #ifndef W_MAIN_H */

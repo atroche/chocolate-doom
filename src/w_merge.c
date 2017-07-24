@@ -81,7 +81,7 @@ static int FindInList(searchlist_t *list, char *name)
     return -1;
 }
 
-static boolean SetupList(searchlist_t *list, searchlist_t *src_list,
+static bool SetupList(searchlist_t *list, searchlist_t *src_list,
                          char *startname, char *endname,
                          char *startname2, char *endname2)
 {
@@ -152,7 +152,7 @@ static void InitSpriteList(void)
     num_sprite_frames = 0;
 }
 
-static boolean ValidSpriteLumpName(char *name)
+static bool ValidSpriteLumpName(char *name)
 {
     if (name[0] == '\0' || name[1] == '\0'
      || name[2] == '\0' || name[3] == '\0')
@@ -229,7 +229,7 @@ static sprite_frame_t *FindSpriteFrame(char *name, int frame)
 
 // Check if sprite lump is needed in the new wad
 
-static boolean SpriteLumpNeeded(lumpinfo_t *lump)
+static bool SpriteLumpNeeded(lumpinfo_t *lump)
 {
     sprite_frame_t *sprite;
     int angle_num;

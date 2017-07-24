@@ -891,7 +891,7 @@ void V_DrawMouseSpeedBox(int speed)
     int redline_x;
     int linelen;
     int i;
-    boolean draw_acceleration = false;
+    bool draw_acceleration = false;
 
     // Get palette indices for colors for widget. These depend on the
     // palette of the game being played.
