@@ -1,0 +1,8 @@
+disable-rules:
+  - ShortVariableName
+  - LongMethod
+  - HighCyclomaticComplexity
+  - BitwiseOperatorInConditional
+  - UselessParentheses
+output: lint.html
+report-type: html
