@@ -112,12 +112,10 @@ void R_DrawColumn (void)
     if (count < 0) 
 	return; 
 				 
-#ifdef RANGECHECK 
     if ((unsigned)dc_x >= SCREENWIDTH
 	|| dc_yl < 0
 	|| dc_yh >= SCREENHEIGHT) 
 	I_Error ("R_DrawColumn: %i to %i at %i", dc_yl, dc_yh, dc_x); 
-#endif 
 
     // Framebuffer destination address.
     // Use ylookup LUT to avoid multiply with ScreenWidth.
@@ -220,7 +218,6 @@ void R_DrawColumnLow (void)
     if (count < 0) 
 	return; 
 				 
-#ifdef RANGECHECK 
     if ((unsigned)dc_x >= SCREENWIDTH
 	|| dc_yl < 0
 	|| dc_yh >= SCREENHEIGHT)
@@ -229,7 +226,6 @@ void R_DrawColumnLow (void)
 	I_Error ("R_DrawColumn: %i to %i at %i", dc_yl, dc_yh, dc_x);
     }
     //	dccount++; 
-#endif 
     // Blocky mode, need to multiply by 2.
     x = dc_x << 1;
     
@@ -301,14 +297,12 @@ void R_DrawFuzzColumn (void)
     if (count < 0) 
 	return; 
 
-#ifdef RANGECHECK 
     if ((unsigned)dc_x >= SCREENWIDTH
 	|| dc_yl < 0 || dc_yh >= SCREENHEIGHT)
     {
 	I_Error ("R_DrawFuzzColumn: %i to %i at %i",
 		 dc_yl, dc_yh, dc_x);
     }
-#endif
     
     dest = ylookup[dc_yl] + columnofs[dc_x];
 
@@ -366,14 +360,12 @@ void R_DrawFuzzColumnLow (void)
     
     x = dc_x << 1;
     
-#ifdef RANGECHECK 
     if ((unsigned)x >= SCREENWIDTH
 	|| dc_yl < 0 || dc_yh >= SCREENHEIGHT)
     {
 	I_Error ("R_DrawFuzzColumn: %i to %i at %i",
 		 dc_yl, dc_yh, dc_x);
     }
-#endif
     
     dest = ylookup[dc_yl] + columnofs[x];
     dest2 = ylookup[dc_yl] + columnofs[x+1];
@@ -432,7 +424,6 @@ void R_DrawTranslatedColumn (void)
     if (count < 0) 
 	return; 
 				 
-#ifdef RANGECHECK 
     if ((unsigned)dc_x >= SCREENWIDTH
 	|| dc_yl < 0
 	|| dc_yh >= SCREENHEIGHT)
@@ -441,7 +432,6 @@ void R_DrawTranslatedColumn (void)
 		  dc_yl, dc_yh, dc_x);
     }
     
-#endif 
 
 
     dest = ylookup[dc_yl] + columnofs[dc_x]; 
@@ -481,7 +471,6 @@ void R_DrawTranslatedColumnLow (void)
     // low detail, need to scale by 2
     x = dc_x << 1;
 				 
-#ifdef RANGECHECK 
     if ((unsigned)x >= SCREENWIDTH
 	|| dc_yl < 0
 	|| dc_yh >= SCREENHEIGHT)
@@ -490,7 +479,6 @@ void R_DrawTranslatedColumnLow (void)
 		  dc_yl, dc_yh, x);
     }
     
-#endif 
 
 
     dest = ylookup[dc_yl] + columnofs[x]; 
@@ -595,7 +583,6 @@ void R_DrawSpan (void)
     int spot;
     unsigned int xtemp, ytemp;
 
-#ifdef RANGECHECK
     if (ds_x2 < ds_x1
 	|| ds_x1<0
 	|| ds_x2>=SCREENWIDTH
@@ -605,7 +592,6 @@ void R_DrawSpan (void)
 		 ds_x1,ds_x2,ds_y);
     }
 //	dscount++;
-#endif
 
     // Pack position and step variables into a single 32-bit integer,
     // with x in the top 16 bits and y in the bottom 16 bits.  For
@@ -724,7 +710,6 @@ void R_DrawSpanLow (void)
     int count;
     int spot;
 
-#ifdef RANGECHECK
     if (ds_x2 < ds_x1
 	|| ds_x1<0
 	|| ds_x2>=SCREENWIDTH
@@ -734,7 +719,6 @@ void R_DrawSpanLow (void)
 		 ds_x1,ds_x2,ds_y);
     }
 //	dscount++; 
-#endif
 
     position = ((ds_xfrac << 10) & 0xffff0000)
              | ((ds_yfrac >> 6)  & 0x0000ffff);

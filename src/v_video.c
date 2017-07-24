@@ -39,10 +39,6 @@
 
 #include <png.h>
 
-// TODO: There are separate RANGECHECK defines for different games, but this
-// is common code. Fix this.
-#define RANGECHECK
-
 // Blending table used for fuzzpatch, etc.
 // Only used in Heretic/Hexen
 
@@ -87,7 +83,6 @@ void V_CopyRect(int srcx, int srcy, pixel_t *source,
     pixel_t *src;
     pixel_t *dest;
  
-#ifdef RANGECHECK 
     if (srcx < 0
      || srcx + width > SCREENWIDTH
      || srcy < 0
@@ -99,7 +94,6 @@ void V_CopyRect(int srcx, int srcy, pixel_t *source,
     {
         I_Error ("Bad V_CopyRect");
     }
-#endif 
 
     V_MarkRect(destx, desty, width, height); 
  
@@ -154,7 +148,6 @@ void V_DrawPatch(int x, int y, patch_t *patch)
             return;
     }
 
-#ifdef RANGECHECK
     if (x < 0
      || x + SHORT(patch->width) > SCREENWIDTH
      || y < 0
@@ -162,7 +155,6 @@ void V_DrawPatch(int x, int y, patch_t *patch)
     {
         I_Error("Bad V_DrawPatch");
     }
-#endif
 
     V_MarkRect(x, y, SHORT(patch->width), SHORT(patch->height));
 
@@ -218,7 +210,6 @@ void V_DrawPatchFlipped(int x, int y, patch_t *patch)
             return;
     }
 
-#ifdef RANGECHECK 
     if (x < 0
      || x + SHORT(patch->width) > SCREENWIDTH
      || y < 0
@@ -226,7 +217,6 @@ void V_DrawPatchFlipped(int x, int y, patch_t *patch)
     {
         I_Error("Bad V_DrawPatchFlipped");
     }
-#endif
 
     V_MarkRect (x, y, SHORT(patch->width), SHORT(patch->height));
 
@@ -506,7 +496,6 @@ void V_DrawBlock(int x, int y, int width, int height, pixel_t *src)
 { 
     pixel_t *dest;
  
-#ifdef RANGECHECK 
     if (x < 0
      || x + width >SCREENWIDTH
      || y < 0
@@ -514,7 +503,6 @@ void V_DrawBlock(int x, int y, int width, int height, pixel_t *src)
     {
 	I_Error ("Bad V_DrawBlock");
     }
-#endif 
  
     V_MarkRect (x, y, width, height); 
  
