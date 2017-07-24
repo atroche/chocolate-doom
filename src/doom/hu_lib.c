@@ -28,10 +28,10 @@
 #include "r_local.h"
 #include "r_draw.h"
 
-// bool : whether the screen is always erased
+// boolean : whether the screen is always erased
 #define noterased viewwindowx
 
-extern bool	automapactive;	// in AM_map.c
+extern boolean	automapactive;	// in AM_map.c
 
 void HUlib_init(void)
 {
@@ -59,7 +59,7 @@ HUlib_initTextLine
     HUlib_clearTextLine(t);
 }
 
-bool
+boolean
 HUlib_addCharToTextLine
 ( hu_textline_t*	t,
   char			ch )
@@ -77,7 +77,7 @@ HUlib_addCharToTextLine
 
 }
 
-bool HUlib_delCharFromTextLine(hu_textline_t* t)
+boolean HUlib_delCharFromTextLine(hu_textline_t* t)
 {
 
     if (!t->len) return false;
@@ -93,7 +93,7 @@ bool HUlib_delCharFromTextLine(hu_textline_t* t)
 void
 HUlib_drawTextLine
 ( hu_textline_t*	l,
-  bool		drawcursor )
+  boolean		drawcursor )
 {
 
     int			i;
@@ -173,7 +173,7 @@ HUlib_initSText
   int		h,
   patch_t**	font,
   int		startchar,
-  bool*	on )
+  boolean*	on )
 {
 
     int i;
@@ -265,7 +265,7 @@ HUlib_initIText
   int		y,
   patch_t**	font,
   int		startchar,
-  bool*	on )
+  boolean*	on )
 {
     it->lm = 0; // default left margin is start of text
     it->on = on;
@@ -306,7 +306,7 @@ HUlib_addPrefixToIText
 
 // wrapper function for handling general keyed input.
 // returns true if it ate the key
-bool
+boolean
 HUlib_keyInIText
 ( hu_itext_t*	it,
   unsigned char ch )

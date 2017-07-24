@@ -72,18 +72,18 @@ typedef struct
     unsigned int ping_time;
     unsigned int query_time;
     unsigned int query_attempts;
-    bool printed;
+    boolean printed;
 } query_target_t;
 
-static bool registered_with_master = false;
-static bool got_master_response = false;
+static boolean registered_with_master = false;
+static boolean got_master_response = false;
 
 static net_context_t *query_context;
 static query_target_t *targets;
 static int num_targets;
 
-static bool query_loop_running = false;
-static bool printed_header = false;
+static boolean query_loop_running = false;
+static boolean printed_header = false;
 static int last_query_time = 0;
 
 static char *securedemo_start_message = NULL;
@@ -156,7 +156,7 @@ void NET_Query_MasterResponse(net_packet_t *packet)
     }
 }
 
-bool NET_Query_CheckAddedToMaster(bool *result)
+boolean NET_Query_CheckAddedToMaster(boolean *result)
 {
     // Got response from master yet?
 
@@ -184,7 +184,7 @@ static void NET_Query_SendMasterQuery(net_addr_t *addr)
 // Given the specified address, find the target associated.  If no
 // target is found, and 'create' is true, a new target is created.
 
-static query_target_t *GetTargetForAddr(net_addr_t *addr, bool create)
+static query_target_t *GetTargetForAddr(net_addr_t *addr, boolean create)
 {
     query_target_t *target;
     int i;
@@ -482,7 +482,7 @@ static void CheckTargetTimeouts(void)
 
 // If all targets have responded or timed out, returns true.
 
-static bool AllTargetsDone(void)
+static boolean AllTargetsDone(void)
 {
     unsigned int i;
 
@@ -867,12 +867,12 @@ static net_packet_t *BlockForPacket(net_addr_t *addr, unsigned int packet_type,
 
 // Query master server for secure demo start seed value.
 
-bool NET_StartSecureDemo(prng_seed_t seed)
+boolean NET_StartSecureDemo(prng_seed_t seed)
 {
     net_packet_t *request, *response;
     net_addr_t *master_addr;
     char *signature;
-    bool result;
+    boolean result;
 
     NET_Query_Init();
     master_addr = NET_Query_ResolveMaster(query_context);

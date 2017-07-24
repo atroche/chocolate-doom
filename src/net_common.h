@@ -95,7 +95,7 @@ typedef struct
 void NET_Conn_SendPacket(net_connection_t *conn, net_packet_t *packet);
 void NET_Conn_InitClient(net_connection_t *conn, net_addr_t *addr);
 void NET_Conn_InitServer(net_connection_t *conn, net_addr_t *addr);
-bool NET_Conn_Packet(net_connection_t *conn, net_packet_t *packet,
+boolean NET_Conn_Packet(net_connection_t *conn, net_packet_t *packet,
                         unsigned int *packet_type);
 void NET_Conn_Disconnect(net_connection_t *conn);
 void NET_Conn_Run(net_connection_t *conn);
@@ -104,7 +104,7 @@ net_packet_t *NET_Conn_NewReliable(net_connection_t *conn, int packet_type);
 // Other miscellaneous common functions
 
 unsigned int NET_ExpandTicNum(unsigned int relative, unsigned int b);
-bool NET_ValidGameSettings(GameMode_t mode, GameMission_t mission, 
+boolean NET_ValidGameSettings(GameMode_t mode, GameMission_t mission, 
                               net_gamesettings_t *settings);
 
 #endif /* #ifndef NET_COMMON_H */

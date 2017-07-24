@@ -31,7 +31,7 @@
 
 #define SCREENHEIGHT_4_3 240
 
-typedef bool (*grabmouse_callback_t)(void);
+typedef boolean (*grabmouse_callback_t)(void);
 
 // Called by D_DoomMain,
 // determines the hardware configuration
@@ -58,7 +58,7 @@ void I_SetWindowTitle(char *title);
 void I_CheckIsScreensaver(void);
 void I_SetGrabMouseCallback(grabmouse_callback_t func);
 
-void I_DisplayFPSDots(bool dots_on);
+void I_DisplayFPSDots(boolean dots_on);
 void I_BindVideoVariables(void);
 
 void I_InitWindowTitle(void);
@@ -79,10 +79,10 @@ void I_StartTic (void);
 void I_EnableLoadingDisk(int xoffs, int yoffs);
 
 extern char *video_driver;
-extern bool screenvisible;
+extern boolean screenvisible;
 
 extern int vanilla_keyboard_mapping;
-extern bool screensaver_mode;
+extern boolean screensaver_mode;
 extern int usegamma;
 extern pixel_t *I_VideoBuffer;
 

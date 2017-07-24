@@ -50,7 +50,7 @@ int test;
 
 #define MOBJ_CYCLE_LIMIT 1000000
 
-bool
+boolean
 P_SetMobjState
 ( mobj_t*	mobj,
   statenum_t	state )

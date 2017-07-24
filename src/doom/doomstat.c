@@ -29,7 +29,7 @@ GameVariant_t   gamevariant = vanilla;
 char *gamedescription;
 
 // Set if homebrew PWAD stuff has been added.
-bool	modifiedgame;
+boolean	modifiedgame;
 
 
 

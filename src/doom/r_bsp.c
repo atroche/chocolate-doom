@@ -377,7 +377,7 @@ int	checkcoord[12][4] =
 };
 
 
-bool R_CheckBBox (fixed_t*	bspcoord)
+boolean R_CheckBBox (fixed_t*	bspcoord)
 {
     int			boxx;
     int			boxy;

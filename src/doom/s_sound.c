@@ -93,7 +93,7 @@ static int snd_SfxVolume;
 
 // Whether songs are mus_paused
 
-static bool mus_paused;
+static boolean mus_paused;
 
 // Music currently being played
 
@@ -681,7 +681,7 @@ void S_ChangeMusic(int musicnum, int looping)
     mus_playing = music;
 }
 
-bool S_MusicPlaying(void)
+boolean S_MusicPlaying(void)
 {
     return I_MusicIsPlaying();
 }

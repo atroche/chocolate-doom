@@ -82,7 +82,7 @@ typedef struct
 // Structure containing parsed metadata read from a digital music track:
 typedef struct
 {
-    bool valid;
+    boolean valid;
     unsigned int samplerate_hz;
     int start_time, end_time;
 } file_metadata_t;
@@ -100,14 +100,14 @@ static const char *subst_config_filenames[] =
     "strife-music.cfg",
 };
 
-static bool music_initialized = false;
+static boolean music_initialized = false;
 
 // If this is true, this module initialized SDL sound and has the 
 // responsibility to shut it down
 
-static bool sdl_was_initialized = false;
+static boolean sdl_was_initialized = false;
 
-static bool musicpaused = false;
+static boolean musicpaused = false;
 static int current_music_volume;
 
 char *music_pack_path = "";
@@ -117,7 +117,7 @@ static char *temp_timidity_cfg = NULL;
 
 // If true, we are playing a substitute digital track rather than in-WAD
 // MIDI/MUS track, and file_metadata contains loop metadata.
-static bool playing_substitute = false;
+static boolean playing_substitute = false;
 static file_metadata_t file_metadata;
 
 // Position (in samples) that we have reached in the current track.
@@ -128,7 +128,7 @@ static unsigned int current_track_pos;
 static Mix_Music *current_track_music = NULL;
 
 // If true, the currently playing track is being played on loop.
-static bool current_track_loop;
+static boolean current_track_loop;
 
 // Given a time string (for LOOP_START/LOOP_END), parse it and return
 // the time (in # samples since start of track) it represents.
@@ -273,7 +273,7 @@ static void ParseFlacFile(file_metadata_t *metadata, FILE *fs)
     byte header[4];
     unsigned int block_type;
     size_t block_len;
-    bool last_block;
+    boolean last_block;
 
     for (;;)
     {
@@ -619,7 +619,7 @@ static char *ParseSubstituteLine(char *filename, char *line)
 
 // Read a substitute music configuration file.
 
-static bool ReadSubstituteConfig(char *filename)
+static boolean ReadSubstituteConfig(char *filename)
 {
     char line[128];
     FILE *fs;
@@ -705,10 +705,10 @@ static void LoadSubstituteConfigs(void)
 // Identifying music lumps by name is not feasible; some games (eg.
 // Heretic, Hexen) don't have a common naming pattern for music lumps.
 
-static bool IsMusicLump(int lumpnum)
+static boolean IsMusicLump(int lumpnum)
 {
     byte *data;
-    bool result;
+    boolean result;
 
     if (W_LumpLength(lumpnum) < 4)
     {
@@ -787,7 +787,7 @@ static void DumpSubstituteConfig(char *filename)
 // is needed to inject a "dir" command so that the patches are read
 // relative to the actual config file.
 
-static bool WriteWrapperTimidityConfig(char *write_path)
+static boolean WriteWrapperTimidityConfig(char *write_path)
 {
     char *p, *path;
     FILE *fstream;
@@ -822,7 +822,7 @@ static bool WriteWrapperTimidityConfig(char *write_path)
 void I_InitTimidityConfig(void)
 {
     char *env_string;
-    bool success;
+    boolean success;
 
     temp_timidity_cfg = M_TempFile("timidity.cfg");
 
@@ -879,7 +879,7 @@ static void I_SDL_ShutdownMusic(void)
     }
 }
 
-static bool SDLIsInitialized(void)
+static boolean SDLIsInitialized(void)
 {
     int freq, channels;
     Uint16 format;
@@ -895,7 +895,7 @@ void TrackPositionCallback(int chan, void *stream, int len, void *udata)
 }
 
 // Initialize music subsystem
-static bool I_SDL_InitMusic(void)
+static boolean I_SDL_InitMusic(void)
 {
     int i;
 
@@ -999,7 +999,7 @@ static void I_SDL_SetMusicVolume(int volume)
 
 // Start playing a mid
 
-static void I_SDL_PlaySong(void *handle, bool looping)
+static void I_SDL_PlaySong(void *handle, boolean looping)
 {
     int loops;
 
@@ -1094,12 +1094,12 @@ static void I_SDL_UnRegisterSong(void *handle)
 
 // Determine whether memory block is a .mid file 
 
-static bool IsMid(byte *mem, int len)
+static boolean IsMid(byte *mem, int len)
 {
     return len > 4 && !memcmp(mem, "MThd", 4);
 }
 
-static bool ConvertMus(byte *musdata, int len, char *filename)
+static boolean ConvertMus(byte *musdata, int len, char *filename)
 {
     MEMFILE *instream;
     MEMFILE *outstream;
@@ -1204,7 +1204,7 @@ static void *I_SDL_RegisterSong(void *data, int len)
 }
 
 // Is the song playing?
-static bool I_SDL_MusicIsPlaying(void)
+static boolean I_SDL_MusicIsPlaying(void)
 {
     if (!music_initialized)
     {

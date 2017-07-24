@@ -29,7 +29,7 @@ void M_SetConfigDir(char *dir);
 void M_BindIntVariable(char *name, int *variable);
 void M_BindFloatVariable(char *name, float *variable);
 void M_BindStringVariable(char *name, char **variable);
-bool M_SetVariable(char *name, char *value);
+boolean M_SetVariable(char *name, char *value);
 int M_GetIntVariable(char *name);
 const char *M_GetStringVariable(char *name);
 float M_GetFloatVariable(char *name);

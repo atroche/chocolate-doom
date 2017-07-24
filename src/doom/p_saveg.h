@@ -39,12 +39,12 @@ char *P_SaveGameFile(int slot);
 
 // Savegame file header read/write functions
 
-bool P_ReadSaveGameHeader(void);
+boolean P_ReadSaveGameHeader(void);
 void P_WriteSaveGameHeader(char *description);
 
 // Savegame end-of-file read/write functions
 
-bool P_ReadSaveGameEOF(void);
+boolean P_ReadSaveGameEOF(void);
 void P_WriteSaveGameEOF(void);
 
 // Persistent storage/archiving.
@@ -59,7 +59,7 @@ void P_ArchiveSpecials (void);
 void P_UnArchiveSpecials (void);
 
 extern FILE *save_stream;
-extern bool savegame_error;
+extern boolean savegame_error;
 
 
 #endif

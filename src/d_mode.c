@@ -47,7 +47,7 @@ static struct
 
 // Check that a gamemode+gamemission received over the network is valid.
 
-bool D_ValidGameMode(GameMission_t mission, GameMode_t mode)
+boolean D_ValidGameMode(GameMission_t mission, GameMode_t mode)
 {
     int i;
 
@@ -62,7 +62,7 @@ bool D_ValidGameMode(GameMission_t mission, GameMode_t mode)
     return false;
 }
 
-bool D_ValidEpisodeMap(GameMission_t mission, GameMode_t mode,
+boolean D_ValidEpisodeMap(GameMission_t mission, GameMode_t mode,
                           int episode, int map)
 {
     int i;
@@ -135,7 +135,7 @@ static struct {
     { strife,   exe_strife_1_31 },
 };
 
-bool D_ValidGameVersion(GameMission_t mission, GameVersion_t version)
+boolean D_ValidGameVersion(GameMission_t mission, GameVersion_t version)
 {
     int i;
 
@@ -161,7 +161,7 @@ bool D_ValidGameVersion(GameMission_t mission, GameVersion_t version)
 
 // Does this mission type use ExMy form, rather than MAPxy form?
 
-bool D_IsEpisodeMap(GameMission_t mission)
+boolean D_IsEpisodeMap(GameMission_t mission)
 {
     switch (mission)
     {

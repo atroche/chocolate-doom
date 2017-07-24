@@ -40,7 +40,7 @@ void M_FindResponseFile(void);
 
 // Parameter has been specified?
 
-bool M_ParmExists(char *check);
+boolean M_ParmExists(char *check);
 
 // Get name of executable used to run this program:
 

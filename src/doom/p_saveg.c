@@ -35,7 +35,7 @@
 
 FILE *save_stream;
 int savegamelength;
-bool savegame_error;
+boolean savegame_error;
 
 // Get the filename of a temporary file to write the savegame to.  After
 // the file has been successfully saved, it will be renamed to the 
@@ -675,13 +675,13 @@ static void saveg_read_player_t(player_t *str)
         str->powers[i] = saveg_read32();
     }
 
-    // bool cards[NUMCARDS];
+    // boolean cards[NUMCARDS];
     for (i=0; i<NUMCARDS; ++i)
     {
         str->cards[i] = saveg_read32();
     }
 
-    // bool backpack;
+    // boolean backpack;
     str->backpack = saveg_read32();
 
     // int frags[MAXPLAYERS];
@@ -696,7 +696,7 @@ static void saveg_read_player_t(player_t *str)
     // weapontype_t pendingweapon;
     str->pendingweapon = saveg_read_enum();
 
-    // bool weaponowned[NUMWEAPONS];
+    // boolean weaponowned[NUMWEAPONS];
     for (i=0; i<NUMWEAPONS; ++i)
     {
         str->weaponowned[i] = saveg_read32();
@@ -762,7 +762,7 @@ static void saveg_read_player_t(player_t *str)
         saveg_read_pspdef_t(&str->psprites[i]);
     }
 
-    // bool didsecret;
+    // boolean didsecret;
     str->didsecret = saveg_read32();
 }
 
@@ -806,13 +806,13 @@ static void saveg_write_player_t(player_t *str)
         saveg_write32(str->powers[i]);
     }
 
-    // bool cards[NUMCARDS];
+    // boolean cards[NUMCARDS];
     for (i=0; i<NUMCARDS; ++i)
     {
         saveg_write32(str->cards[i]);
     }
 
-    // bool backpack;
+    // boolean backpack;
     saveg_write32(str->backpack);
 
     // int frags[MAXPLAYERS];
@@ -827,7 +827,7 @@ static void saveg_write_player_t(player_t *str)
     // weapontype_t pendingweapon;
     saveg_write_enum(str->pendingweapon);
 
-    // bool weaponowned[NUMWEAPONS];
+    // boolean weaponowned[NUMWEAPONS];
     for (i=0; i<NUMWEAPONS; ++i)
     {
         saveg_write32(str->weaponowned[i]);
@@ -893,7 +893,7 @@ static void saveg_write_player_t(player_t *str)
         saveg_write_pspdef_t(&str->psprites[i]);
     }
 
-    // bool didsecret;
+    // boolean didsecret;
     saveg_write32(str->didsecret);
 }
 
@@ -925,7 +925,7 @@ static void saveg_read_ceiling_t(ceiling_t *str)
     // fixed_t speed;
     str->speed = saveg_read32();
 
-    // bool crush;
+    // boolean crush;
     str->crush = saveg_read32();
 
     // int direction;
@@ -958,7 +958,7 @@ static void saveg_write_ceiling_t(ceiling_t *str)
     // fixed_t speed;
     saveg_write32(str->speed);
 
-    // bool crush;
+    // boolean crush;
     saveg_write32(str->crush);
 
     // int direction;
@@ -1046,7 +1046,7 @@ static void saveg_read_floormove_t(floormove_t *str)
     // floor_e type;
     str->type = saveg_read_enum();
 
-    // bool crush;
+    // boolean crush;
     str->crush = saveg_read32();
 
     // sector_t* sector;
@@ -1077,7 +1077,7 @@ static void saveg_write_floormove_t(floormove_t *str)
     // floor_e type;
     saveg_write_enum(str->type);
 
-    // bool crush;
+    // boolean crush;
     saveg_write32(str->crush);
 
     // sector_t* sector;
@@ -1135,7 +1135,7 @@ static void saveg_read_plat_t(plat_t *str)
     // plat_e oldstatus;
     str->oldstatus = saveg_read_enum();
 
-    // bool crush;
+    // boolean crush;
     str->crush = saveg_read32();
 
     // int tag;
@@ -1174,7 +1174,7 @@ static void saveg_write_plat_t(plat_t *str)
     // plat_e oldstatus;
     saveg_write_enum(str->oldstatus);
 
-    // bool crush;
+    // boolean crush;
     saveg_write32(str->crush);
 
     // int tag;
@@ -1373,7 +1373,7 @@ void P_WriteSaveGameHeader(char *description)
 // Read the header for a savegame
 //
 
-bool P_ReadSaveGameHeader(void)
+boolean P_ReadSaveGameHeader(void)
 {
     int	 i; 
     byte a, b, c; 
@@ -1413,7 +1413,7 @@ bool P_ReadSaveGameHeader(void)
 // Read the end of file marker.  Returns true if read successfully.
 // 
 
-bool P_ReadSaveGameEOF(void)
+boolean P_ReadSaveGameEOF(void)
 {
     int value;
 

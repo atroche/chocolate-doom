@@ -43,11 +43,11 @@ T_MovePlane
 ( sector_t*	sector,
   fixed_t	speed,
   fixed_t	dest,
-  bool	crush,
+  boolean	crush,
   int		floorOrCeiling,
   int		direction )
 {
-    bool	flag;
+    boolean	flag;
     fixed_t	lastpos;
 	
     switch(floorOrCeiling)

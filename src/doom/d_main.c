@@ -91,30 +91,30 @@ char *          savegamedir;
 char *          iwadfile;
 
 
-bool		devparm;	// started game with -devparm
-bool         nomonsters;	// checkparm of -nomonsters
-bool         respawnparm;	// checkparm of -respawn
-bool         fastparm;	// checkparm of -fast
+boolean		devparm;	// started game with -devparm
+boolean         nomonsters;	// checkparm of -nomonsters
+boolean         respawnparm;	// checkparm of -respawn
+boolean         fastparm;	// checkparm of -fast
 
 //extern int soundVolume;
 //extern  int	sfxVolume;
 //extern  int	musicVolume;
 
-extern  bool	inhelpscreens;
+extern  boolean	inhelpscreens;
 
 skill_t		startskill;
 int             startepisode;
 int		startmap;
-bool		autostart;
+boolean		autostart;
 int             startloadgame;
 
-bool		advancedemo;
+boolean		advancedemo;
 
 // Store demo, do not accept any inputs
-bool         storedemo;
+boolean         storedemo;
 
 // If true, the main game loop has started.
-bool         main_loop_started = false;
+boolean         main_loop_started = false;
 
 char		wadfile[1024];		// primary wad file
 char		mapdir[1024];           // directory of development maps
@@ -155,25 +155,25 @@ void D_ProcessEvents (void)
 
 // wipegamestate can be set to -1 to force a wipe on the next draw
 gamestate_t     wipegamestate = GS_DEMOSCREEN;
-extern  bool setsizeneeded;
+extern  boolean setsizeneeded;
 extern  int             showMessages;
 void R_ExecuteSetViewSize (void);
 
 void D_Display (void)
 {
-    static  bool		viewactivestate = false;
-    static  bool		menuactivestate = false;
-    static  bool		inhelpscreensstate = false;
-    static  bool		fullscreen = false;
+    static  boolean		viewactivestate = false;
+    static  boolean		menuactivestate = false;
+    static  boolean		inhelpscreensstate = false;
+    static  boolean		fullscreen = false;
     static  gamestate_t		oldgamestate = -1;
     static  int			borderdrawcount;
     int				nowtime;
     int				tics;
     int				wipestart;
     int				y;
-    bool			done;
-    bool			wipe;
-    bool			redrawsbar;
+    boolean			done;
+    boolean			wipe;
+    boolean			redrawsbar;
 
     if (nodrawers)
 	return;                    // for comparative timing / profiling
@@ -374,7 +374,7 @@ void D_BindVariables(void)
 // Called to determine whether to grab the mouse pointer
 //
 
-bool D_GrabMouseCallback(void)
+boolean D_GrabMouseCallback(void)
 {
     // Drone players don't need mouse focus
 
@@ -710,7 +710,7 @@ void D_SetGameDescription(void)
 //      print title for every printed line
 char            title[128];
 
-static bool D_AddFile(char *filename)
+static boolean D_AddFile(char *filename)
 {
     wad_file_t *handle;
 
@@ -747,7 +747,7 @@ static void InitGameVersion(void)
     int demoversion;
     int p;
     int i;
-    bool status;
+    boolean status;
 
     //! 
     // @arg <version>
