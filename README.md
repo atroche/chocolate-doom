@@ -4,6 +4,7 @@ An extremely WIP fork of [chocolate-doom](https://github.com/chocolate-doom/choc
 
 * uses CMake instead of autotools
 * doesn't split the application up into static libraries
+* uses the SDL2 branch of chocolate-doom
 * removes:
   * Windows support
   * Strife / Hexen / Heretic etc. support
