@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.8)
 project(mindoom)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 set(CMAKE_C_STANDARD 11)
 
 INCLUDE(FindPkgConfig)
@@ -23,7 +25,7 @@ add_executable(mindoom ${COMMON_SOURCE_FILES} ${GAME_FILES} ${DOOM_SOURCE})
 
 target_compile_options(mindoom PUBLIC -Wall -Werror)
 
-set_target_properties(mindoom PROPERTIES C_INCLUDE_WHAT_YOU_USE iwyu)
+#set_target_properties(mindoom PROPERTIES C_INCLUDE_WHAT_YOU_USE iwyu)
 
 target_link_libraries(mindoom ${SDL2_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${LIBPNG_LIBRARIES})
 
