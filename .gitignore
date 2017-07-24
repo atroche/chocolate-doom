@@ -2,3 +2,4 @@ choc.xcworkspace/
 build/
 infer-out/
 *.srctrl*
+.nvimrc
