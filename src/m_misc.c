@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <strings.h>
-#include <sys/errno.h>
+#include <errno.h>
 #include <sys/stat.h>
 
 #include "doomtype.h"

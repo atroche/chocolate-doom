@@ -1,18 +1,21 @@
 cmake_minimum_required(VERSION 3.8)
 project(microdoom)
 
+set(VERBOSE ON)
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_C_STANDARD 11)
 
 INCLUDE(FindPkgConfig)
 
-PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
-PKG_SEARCH_MODULE(SDL2_MIXER REQUIRED SDL2_mixer>=2.0.0)
-PKG_SEARCH_MODULE(SDL2_NET REQUIRED SDL2_net>=2.0.0)
-PKG_SEARCH_MODULE(LIBPNG REQUIRED libpng)
+#PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
+#PKG_SEARCH_MODULE(SDL2_MIXER REQUIRED SDL2_mixer>=2.0.0)
+#PKG_SEARCH_MODULE(SDL2_NET REQUIRED SDL2_net>=2.0.0)
+#PKG_SEARCH_MODULE(LIBPNG REQUIRED libpng)
 
-include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_MIXER_INCLUDE_DIRS} ${SDL2_NET_INCLUDE_DIRS} ${LIBPNG_INCLUDE_DIRS} src src/doom)
+include_directories(/usr/local/include/SDL2 src src/doom)
+link_directories(/usr/local/lib)
 
 
 set(COMMON_SOURCE_FILES src/i_system.c src/d_mode.c src/i_main.c src/i_timer.c src/m_argv.c src/m_misc.c src/net_common.c src/net_dedicated.c src/net_io.c src/net_packet.c src/net_query.c src/net_sdl.c src/net_server.c src/net_structrw.c)
@@ -23,9 +26,10 @@ set(DOOM_SOURCE src/doom/am_map.c src/doom/d_items.c src/doom/d_main.c src/doom/
 
 add_executable(microdoom ${COMMON_SOURCE_FILES} ${GAME_FILES} ${DOOM_SOURCE})
 
-target_compile_options(microdoom PUBLIC -Wall -Werror)
-
+#target_compile_options(microdoom PUBLIC -s USE_SDL=2 -Wall -Werror -s USE_SDL_NET=2 -s USE_LIBPNG=1)
+set(CMAKE_C_FLAGS "-s USE_SDL=2 -Wall -Werror -s USE_SDL_NET=2 -s USE_LIBPNG=1 -s TOTAL_MEMORY=134217728")
 #set_target_properties(microdoom PROPERTIES C_INCLUDE_WHAT_YOU_USE iwyu)
 
-target_link_libraries(microdoom ${SDL2_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${LIBPNG_LIBRARIES})
+#target_link_libraries(microdoom ${SDL2_LIBRARIES} ${SDL2_NET_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${LIBPNG_LIBRARIES})
+target_link_libraries(microdoom SDL2_mixer_wasm)
 

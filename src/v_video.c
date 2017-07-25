@@ -19,7 +19,7 @@
 //	Functions to blit a block to the screen.
 //
 
-#include <_types/_uint8_t.h>
+#include <stdint.h>
 #include <math.h>
 #include <png.h>
 #include <stdio.h>

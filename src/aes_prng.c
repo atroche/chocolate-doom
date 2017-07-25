@@ -25,8 +25,7 @@
 // up to work independently.
 //
 
-#include <_types/_uint32_t.h>
-#include <_types/_uint8_t.h>
+#include <stdint.h>
 
 #include "SDL_endian.h"
 #include "aes_prng.h"

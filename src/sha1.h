@@ -18,7 +18,7 @@
 #ifndef __SHA1_H__
 #define __SHA1_H__
 
-#include <_types/_uint32_t.h>
+#include <stdint.h>
 #include <stddef.h>
 
 #include "doomtype.h"

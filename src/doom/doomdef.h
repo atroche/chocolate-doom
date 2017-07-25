@@ -20,7 +20,7 @@
 #ifndef __DOOMDEF__
 #define __DOOMDEF__
 
-#include "i_timer.h"
+#include "../i_timer.h"
 
 //
 // Global parameters/defines.

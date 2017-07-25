@@ -19,7 +19,7 @@
 
 
 #include <limits.h>
-#include <sys/_types/_int64_t.h>
+#include <stdint.h>
 
 #include "m_fixed.h"
 #include "stdlib.h"

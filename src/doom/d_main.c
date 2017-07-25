@@ -1237,10 +1237,15 @@ void D_DoomMain (void)
 
     printf("I_Init: Setting up machine state.\n");
     I_CheckIsScreensaver();
+    printf("Checked screen saver\n");
     I_InitTimer();
+    printf("inited timer\n");
     I_InitJoystick();
+    printf("inited joystick \n");
     I_InitSound(true);
+    printf("initted sound\n");
     I_InitMusic();
+    printf("initted music\n");
 
     printf ("NET_Init: Init network subsystem.\n");
     NET_Init ();

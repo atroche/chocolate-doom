@@ -17,7 +17,7 @@
 //
 
 
-#include <_types/_uint32_t.h>
+#include <stdint.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>

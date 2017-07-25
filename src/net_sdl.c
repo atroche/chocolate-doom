@@ -15,8 +15,7 @@
 //     Networking module which uses SDL_net
 //
 
-#include <_types/_uint16_t.h>
-#include <_types/_uint32_t.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 

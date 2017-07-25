@@ -14,7 +14,7 @@
 // Reading and writing various structures into packets
 //
 
-#include <_types/_uint8_t.h>
+#include <stdint.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>

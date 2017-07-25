@@ -17,8 +17,7 @@
 //	System interface for sound.
 //
 
-#include <_types/_uint32_t.h>
-#include <_types/_uint64_t.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
