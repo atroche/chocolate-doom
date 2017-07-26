@@ -17,10 +17,8 @@
 //  wall, wrapping around. A 1024 columns equal 360 degrees.
 //  The default sky map is 256 columns and repeats 4 times
 //  on a 320 screen?
-//  
 //
-
-
+//
 
 #include "i_video.h"
 // Needed for FRACUNIT.
@@ -30,19 +28,15 @@
 //
 // sky mapping
 //
-int			skyflatnum;
-int			skytexture;
-int			skytexturemid;
-
-
+int skyflatnum;
+int skytexture;
+int skytexturemid;
 
 //
 // R_InitSkyMap
 // Called whenever the view size changes.
 //
-void R_InitSkyMap (void)
-{
+void R_InitSkyMap(void) {
   // skyflatnum = R_FlatNumForName ( SKYFLATNAME );
-    skytexturemid = SCREENHEIGHT/2*FRACUNIT;
+  skytexturemid = SCREENHEIGHT / 2 * FRACUNIT;
 }
-
