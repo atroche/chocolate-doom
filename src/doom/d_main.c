@@ -625,7 +625,7 @@ void D_IdentifyVersion(void) {
 
 // Set the gamedescription string
 
-void D_SetGameDescription(void) { gamedescription = "MinDoom"; }
+void D_SetGameDescription(void) { gamedescription = "Microdoom"; }
 
 //      print title for every printed line
 char title[128];

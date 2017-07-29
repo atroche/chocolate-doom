@@ -14,16 +14,19 @@ An extremely WIP fork of [chocolate-doom](https://github.com/chocolate-doom/choc
   * The terminal-based setup GUI
   * A couple of external dependencies
   * DeHackEd
-  * a lot of legacy systems support in general
+  * other legacy system support
 
 * amibitions:
   * have it run in the browser, with hyperlinks between WADs
   * Doom + WebVR
   * automated testing
+  * remove even more legacy stuff!
 
 ## Building
 
-Native build (only tested on OSX, should be fine on Linux):
+### Native build 
+
+only tested on OSX, should be fine on Linux)
 ```
 mkdir build
 cd build
