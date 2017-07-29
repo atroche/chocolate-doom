@@ -974,6 +974,8 @@ void D_DoomMain(void) {
   D_IdentifyVersion();
   InitGameVersion();
 
+  // TODO: surely very related to init game version?
+  //
   // Check which IWAD variant we are using.
 
   if (W_CheckNumForName("FREEDOOM") >= 0) {
@@ -1061,18 +1063,18 @@ void D_DoomMain(void) {
            " line option instead of '-file'.\n");
   }
 
-  I_PrintStartupBanner(gamedescription);
+  /*I_PrintStartupBanner(gamedescription);*/
 
   // Freedoom's IWADs are Boom-compatible, which means they usually
   // don't work in Vanilla (though FreeDM is okay). Show a warning
   // message and give a link to the website.
-  if (gamevariant == freedoom) {
-    printf(" WARNING: You are playing using one of the Freedoom IWAD\n"
-           " files, which might not work in this port. See this page\n"
-           " for more information on how to play using Freedoom:\n"
-           "   https://www.chocolate-doom.org/wiki/index.php/Freedoom\n");
-    I_PrintDivider();
-  }
+  /*if (gamevariant == freedoom) {*/
+    /*printf(" WARNING: You are playing using one of the Freedoom IWAD\n"*/
+           /*" files, which might not work in this port. See this page\n"*/
+           /*" for more information on how to play using Freedoom:\n"*/
+           /*"   https://www.chocolate-doom.org/wiki/index.php/Freedoom\n");*/
+    /*I_PrintDivider();*/
+  /*}*/
 
   printf("I_Init: Setting up machine state.\n");
   I_CheckIsScreensaver();

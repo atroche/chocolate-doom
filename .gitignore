@@ -3,3 +3,8 @@ build/
 infer-out/
 *.srctrl*
 .nvimrc
+w-build/
+scratch.md/
+tags
+compile_commands.json
+scratch.md

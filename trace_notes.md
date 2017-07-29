@@ -21,6 +21,27 @@ Also setup a hook to save config file when we exit
 
 ### Find and load IWAD
 
-### Get version from IWAD so we know how to switch up behaviour
+### Get version / variant from IWAD so we know how to switch up behaviour
 
 ### Add PWADs
+
+### Play demos
+
+### Generate lump hash table for performance?
+
+### Set game description
+
+### Print startup banner
+
+### Deal with screensaver support
+
+### Init SDL stuff
+
+#### Timer
+
+#### Joystick
+
+#### Sound
+
+Looks like it always tried to start timidity when it's set to native musi? Maybe its needed to use native midi. Might have to fork it or sometihg?
+
