@@ -5,6 +5,7 @@ An extremely WIP fork of [chocolate-doom](https://github.com/chocolate-doom/choc
 * uses CMake instead of autotools
 * doesn't split the application up into static libraries
 * uses the SDL2 branch of chocolate-doom
+* has grand ambitions of being able to run in the browser as [WebAssembly](http://webassembly.org/)
 * removes:
   * Windows support
   * Strife / Hexen / Heretic etc. support
