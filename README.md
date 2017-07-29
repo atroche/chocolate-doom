@@ -7,6 +7,7 @@ An extremely WIP fork of [chocolate-doom](https://github.com/chocolate-doom/choc
 * uses the SDL2 branch of chocolate-doom
 * uses IWYU (“Include What You Use”) to keep headers sane
 * uses clang-format with --style=llvm
+* has grand ambitions of being able to run in the browser as [WebAssembly](http://webassembly.org/)
 * removes:
   * Windows support
   * Strife / Hexen / Heretic etc. support
