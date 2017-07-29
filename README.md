@@ -8,7 +8,7 @@ I am to be highly responsive to any and all queries via GitHub Issue, and promis
 
 * uses CMake instead of autotools
 * uses the SDL2 branch of chocolate-doom
-* uses IWYU (“Include What You Use”) to keep headers sane
+* uses [IWYU](https://include-what-you-use.org/) (“Include What You Use”) to keep headers sane
 * uses clang-format with --style=llvm
 * doesn't split the application up into static libraries
 * removes:
